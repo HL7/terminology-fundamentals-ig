@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/r5/fhir-single.xsd">
-  <id value="hl7.fhir.uv.howto"/>
-  <url value="http://hl7.org/fhir/uv/howto/ImplementationGuide/hl7.fhir.uv.howto"/>
+  <id value="hl7.fhir.uv.termfundamentals"/>
+  <url value="http://hl7.org/fhir/uv/howto/ImplementationGuide/hl7.fhir.uv.termfundamentals"/>
   <version value="0.1.0"/>
-  <name value="HowToCreateIGs"/>
-  <title value="Guidance for FHIR IG Creation"/>
+  <name value="TerminologyFundamentals"/>
+  <title value="Terminology Fundamentals"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <publisher value="HL7 International - FHIR Management Group"/>
+  <publisher value="HL7 International - Terminology Infrastructure"/>
   <contact>
     <telecom>
       <system value="other"/>
-      <value value="http://hl7.org/Special/committees/fhirmg"/>
+      <value value="http://hl7.org/Special/committees/vocab"/>
     </telecom>
   </contact>
   <description value="Provides guidance on the process to define implementation guides using the HL7 IG Publisher and HL7-managed IG templates.  It also provides guidance on 'best practices' around IG development and information about how to develop and maintain IG templates."/>
@@ -21,7 +21,7 @@
       <code value="001"/>
     </coding>
   </jurisdiction>
-  <packageId value="hl7.fhir.uv.howto"/>
+  <packageId value="hl7.fhir.uv.termfundamentals"/>
   <license value="CC0-1.0"/>
   <fhirVersion value="5.0.0"/>
   <definition>
