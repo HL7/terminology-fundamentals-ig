@@ -3,4 +3,4 @@
 # (And include comments like this justifying why)
 
 # This value set should never have been deprecated
-Reference to deprecated item http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0

@@ -1,7 +1,7 @@
 {
-  "package-id" : "hl7.termfundamentals",
+  "package-id" : "hl7.fhir.uv.termfundamentals",
   "version" : "1.0.0-ballot",
-  "path" : "http://terminology.hl7.org/5.4.0",
+  "path" : "http://hl7.org/fhir/uv/termfundamentals/2025Jan",
   "mode" : "working",
   "status" : "ballot",
   "sequence" : "STU 1",
