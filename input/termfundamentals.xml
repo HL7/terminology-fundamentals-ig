@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/r5/fhir-single.xsd">
   <id value="hl7.fhir.uv.termfundamentals"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="draft"/> 
+  </extension> 
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0"/> 
+  </extension>
   <url value="http://hl7.org/fhir/uv/howto/ImplementationGuide/hl7.fhir.uv.termfundamentals"/>
   <version value="0.1.0"/>
   <name value="TerminologyFundamentals"/>
@@ -14,7 +20,7 @@
       <value value="http://hl7.org/Special/committees/vocab"/>
     </telecom>
   </contact>
-  <description value="Provides guidance on the process to define implementation guides using the HL7 IG Publisher and HL7-managed IG templates.  It also provides guidance on 'best practices' around IG development and information about how to develop and maintain IG templates."/>
+  <description value="The Terminology Fundamentals IG is an informative cross-paradigm IG that incorporates the basic principles of terminology that are used and described across HL7 published standards. The IG is designed to be a valuable educational resource for those seeking to enhance their understanding of terminology within the realm of HL7."/>
   <jurisdiction>
     <coding>
       <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
@@ -36,82 +42,80 @@
         <title value="IG Home Page"/>
         <generation value="html"/>
       </page>
-      <page>
-        <sourceUrl value="background.html"/>
+	  <page>
         <name value="background.html"/>
         <title value="Background"/>
         <generation value="html"/>
       </page>
-      <page>
-        <sourceUrl value="readingIgs.html"/>
-        <name value="readingIgs.html"/>
-        <title value="Reading Implemenation Guides"/>
+	  <page>
+        <name value="concepts.html"/>
+        <title value="Concepts and Codes"/>
         <generation value="html"/>
       </page>
-      <page>
-        <sourceUrl value="terminology.html"/>
-        <name value="terminology.html"/>
-        <title value="Working with Terminology"/>
+	  <page>
+        <name value="codesystems.html"/>
+        <title value="Code Systems"/>
         <generation value="html"/>
       </page>
-      <page>
-        <sourceUrl value="sql.html"/>
-        <name value="sql.html"/>
-        <title value="Working with SQL"/>
+	  <page>
+        <name value="identifiersystems.html"/>
+        <title value="Identifier Systems"/>
         <generation value="html"/>
       </page>
-      <page>
-        <sourceUrl value="languages.html"/>
-        <name value="languages.html"/>
-        <title value="Producing Multi-Language IGs"/>
+	  <page>
+        <name value="conceptdomains.html"/>
+        <title value="Concept Domains"/>
+        <generation value="html"/>
+      </page>
+	  <page>
+        <name value="terminologymaps.html"/>
+        <title value="Terminology Maps"/>
+        <generation value="html"/>
+      </page>
+	  <page>
+        <name value="valuesets.html"/>
+        <title value="Value Sets"/>
+        <generation value="html"/>
+      </page>
+	  <page>
+        <name value="valuesetdefinition.html"/>
+        <title value="Value Set Definition"/>
+        <generation value="html"/>
+      </page>
+	  <page>
+        <name value="vsdoverview.html"/>
+        <title value="Value Set Definition Overview"/>
         <generation value="markdown"/>
       </page>
-      <page>
-        <sourceUrl value="tooling.html"/>
-        <name value="tooling.html"/>
-        <title value="IG Tooling"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <sourceUrl value="using-templates.html"/>
-        <name value="using-templates.html"/>
-        <title value="Using the HL7 Templates"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <sourceUrl value="best-practice.html"/>
-        <name value="best-practice.html"/>
-        <title value="IG Best Practices"/>
+	  <page>
+        <name value="cld.html"/>
+        <title value="Content Logical Definition"/>
         <generation value="markdown"/>
-        <page>
-          <sourceUrl value="diagrams.html"/>
-          <name value="diagrams.html"/>
-          <title value="Adding diagrams"/>
-          <generation value="markdown"/>
-        </page>
       </page>
-      <page>
-        <sourceUrl value="template.html"/>
-        <name value="template.html"/>
-        <title value="Extending the HL7 IG Templates"/>
-        <generation value="html"/>
-        <page>
-          <sourceUrl value="colors.html"/>
-          <name value="colors.html"/>
-          <title value="Changing the IG colors"/>
-          <generation value="markdown"/>
-        </page>
+	  <page>
+        <name value="expressionsyntax.html"/>
+        <title value="An HL7 Value Set Definition Expression Syntax"/>
+        <generation value="markdown"/>
+      </page>
+	  <page>
+        <name value="vsdconsiderations.html"/>
+        <title value="Implementation Considerations"/>
+        <generation value="markdown"/>
+      </page>
+	  <page>
+        <name value="otherstandards.html"/>
+        <title value="Relationships to Other HL7 Standards "/>
+        <generation value="markdown"/>
+      </page>
+	  <page>
+        <name value="vsdexamples.html"/>
+        <title value="Examples"/>
+        <generation value="markdown"/>
       </page>
       <page>
         <sourceUrl value="downloads.html"/>
         <name value="downloads.html"/>
         <title value="Useful Downloads"/>
-        <generation value="html"/>
-      </page>
-      <page>
-        <sourceUrl value="changes.html"/>
-        <name value="changes.html"/>
-        <title value="IG Change History"/>
         <generation value="html"/>
       </page>
     </page>
@@ -120,7 +124,7 @@
         <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
         <code value="copyrightyear"/>
       </code>       
-      <value value="2019+"/>
+      <value value="2024+"/>
     </parameter>
     <parameter>
       <code>

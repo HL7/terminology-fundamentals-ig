@@ -1,0 +1,44 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/r5/fhir-single.xsd">
+  <!-- The spaces between the open and close "a" tag are mandatory.  (Cuz HTML renderers are dumb...) -->
+  <a name="identifiersystems"> </a>
+  <h3>Identifier Systems</h3>
+  <p>
+   Identifier systems are composed of non-coded strings (typically numeric or alphanumeric) that have a common purpose and/or context. Typically, identifiers are used to connect 
+   content in resources to external content available in other frameworks or protocols. The Global Trade Item Number (GTIN) system and US state driver's license number systems, 
+   country passport number systems are examples of external Identifier Systems.
+  </p>
+  <p>
+    The deferral of the association between a coded element and its allowed coded values is useful because it may not be possible to achieve consensus on the Value Set to be used
+	within a model at the level at which the model is being developed. For example, it may be possible to gain international consensus on messages for submitting insurance claims 
+	for health care services. However, gaining international consensus on a single set of billing codes is unlikely any time soon.
+  </p>
+  <p>
+    Concept Domains are universal in nature, so the name for a Concept Domain should never contain any reference to a specific implementation context. Concept Domains are also
+	present to permit binding to more than one specific terminology (in general), so the names also should not contain a reference to a specific coding system. 
+  </p>
+  <p>
+    A Concept Domain should be documented by specifying a name and a narrative definition. It is strongly recommended that at least three concept examples that represent possible
+	values for an attribute or data type property are provided to illustrate the semantic space. [5] The examples should represent concepts that characterize the intent and purpose
+	of the Concept Domain. This can be accomplished in one of the following ways:
+  </p>
+  <ul>
+    <li>Including example concepts as part of the narrative definition</li>
+	<li>Binding the Concept Domain to a Value Set that provides appropriate example concepts</li>
+  </ul>
+  
+  <a name="cd-examples"> </a>
+  <h4 id="cd-examples">Examples of Concept Domains</h4>
+  <p>
+    The Concept Domain named 'HumanLanguage' carries the description, "Codes for the representation of the names of human languages". The set of concept identifiers that represent
+	different human languages can be drawn from different Code Systems, depending on the implementation context. For example, a United States Implementation Guide may choose to use 
+	a Value Set that includes concept identifiers for various Native American languages, while a New Zealand Implementation Guide may find such a Value Set inappropriate.
+  </p>
+  
+  <a name="sub-domains"> </a>
+  <h4 id="sub-domains">Sub-Domains</h4>
+  <p>
+    One Concept Domain may be defined to be "sub-domain" of another. This means that the intended meaning and reference of the sub-domain is intended to be narrower than the meaning 
+	of the parent. For example, there is a domain ObservationMethod, with a sub-domain of GeneticObservationMethod. This is not intended to be an ontological assertion; its primary 
+	purpose is to indicate that all of the concepts in a Value Set that is associated with the sub-domain should also be concepts for the parent domain, though the reverse may not be true.
+  </p>
+</div>

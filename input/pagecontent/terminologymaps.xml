@@ -1,0 +1,30 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/r5/fhir-single.xsd">
+  <!-- The spaces between the open and close "a" tag are mandatory.  (Cuz HTML renderers are dumb...) -->
+  <a name="terminologymaps"> </a>
+  <h3>Terminology Maps</h3>
+  <p>
+   ISO/TR 12300:2014 [14] defines terminology mapping as the "process of defining a relationship between concepts in one coding system to concepts in another coding system, following a documented rationale, for a given purpose." 
+  </p>
+  <p>
+    The output of terminology mapping is a Terminology Map. This can be realized using multiple formats, including the FHIR ConceptMap resource. 
+  </p>
+  <p>
+    The same concept(s) may be defined and published in multiple Code Systems by multiple organizations. Mapping these concepts between disparate Code Systems promotes semantic interoperability. As an example, 
+	use of Terminology Maps can facilitate data aggregation to determine trends in public health. Another example is using Terminology Maps to map clinical data to claims data. 
+  </p>
+  <p>
+    A Terminology Map should describe the relationships between Concepts from a single source Code System to a single target Code System. Maps are unidirectional unless specifically declared to be bi-directional. 
+  </p>
+  <p>
+   A single Concept from a source Code System may be mapped to one or more Concepts from the target Code System. 
+  </p>
+  <p>
+    While perfect semantic alignment between Concepts is ideal, it is often not achievable. Specific use cases may support mappings between concepts that are sufficiently similar. If possible, 
+	the relationship or level of equivalence between the source and target concepts, should be defined for each mapping. Common mapping relationships include equivalent 
+	(the definitions of the concepts mean the same thing), broader (target concept is broader in meaning than the source concept) and narrower (target concept is narrower in meaning than the source concept).
+  </p>
+  <p>
+   Resources: https://cdn.who.int/media/docs/default-source/classification/who-fic-network/whofic_terminology_mapping_guide.pdf 
+  </p>
+
+</div>

@@ -1,0 +1,183 @@
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/r5/fhir-single.xsd">
+  <!-- The spaces between the open and close "a" tag are mandatory.  (Cuz HTML renderers are dumb...) -->
+  <a name="valuesets"> </a>
+  <h3>Value Sets</h3>
+  <p>
+   A Value Set represents a uniquely identifiable set of valid concept identifiers, where any concept identifier in a coded element can be tested to determine whether it is a
+   member of the Value Set at a specific point in time. A concept identifier in a Value Set may be a single concept code or a post-coordinated expression of a combination of codes.
+  </p>
+  <p>
+    Value Sets exist to constrain the permissible content for a particular use, e.g. for use in analysis, display to a user, etc. For HL7, value sets constrain the permissible 
+	content for a coded element in an HL7 information model or data type specification. Thus, at implementation time, a coded element must be associated with a list of codes 
+	that represent the possible concepts that can be represented in that element at the time of use. Value Sets cannot have null content, and must contain at least one Concept
+	Representation. Identical codes from different Code Systems are allowable if they can be disambiguated by identifying the Code System they come from.
+  </p>
+  <p>
+    Ideally, a given Concept in a Value Set should be represented only by a single code. However, in unusual circumstances, a given concept in a Value Set can have more than one
+	code (e.g. where a different case is used to signify the same concept, as 'l' and 'L' in UCUM for 'litre'); it is generally rare that Code Systems from which Value Sets are 
+	drawn contain multiple codes for the same concept.
+  </p>
+  <p>
+    Value Set complexity may range from a simple flat list of concept codes drawn from a single Code System to an unbounded hierarchical set of implicit post-coordinated expressions
+	drawn from multiple Code Systems. A Value Set may include concepts directly defined in code systems, and may also include concepts defined with post coordinated expressions 
+	(using those code systems that support post coordination).
+  </p>
+  <p>
+    Because the collection of codes in a Value Set may be unbounded, and may be dependent upon the time the collection is used, a Value Set is only persisted as its Value Set Definition,
+	which is a machine-processable set of 1 or more expressions that permit a specific collection of coded concepts at a given point in time to be reliably reproduced. The collection of 
+	codes that is generated from the Value Set Definition are called the Value Set Expansion. Whether or not the generated collection, the Value Set Expansion, is also persisted is an 
+	implementation choice. Value Set Definitions permit the expanded collection of Codes to change over time with no change to the definition, if the user so desires. Value Set Definitions
+	can also be revised over time to reflect changes to underlying code systems, improved understanding of the requirements for the Value Set, etc. However, changes to a Value Set Definition 
+	should ensure that the Value Set Expansion remains consistent with the use of the Value Set; i.e. changes to a Value Set Definition should not cause issues with specifications or
+	implementations that are already using the Value Set and that may not make reference to the specific version of the definition. Even with this caveat, such changes should still be
+	approached with great care, as changes in value set expansions may have adverse effects on some applications using the value set.
+  </p>
+  <p>
+    A Value Set optionally has a description, but this is not intended to describe the semantics of the Value Set; a Value Set has no intrinsic semantics separate from its Value Set Expansion.
+	The description should capture its intended use, which is needed for ensuring integrity for its use in implementations across future changes.
+  </p>
+  <p>
+    HL7 International defines Value Sets as part of its vocabulary maintenance procedures, and the definitions of these are incorporated within the published HL7 vocabulary artifacts; 
+	these are commonly called HL7 Value Sets or Internal Value Sets. As Value Sets are business Use Case specific, many of these HL7 Value Sets or Internal Value Sets live within HL7 publications.
+	Generally useful Value Sets are published by HL7 in the HL7 Terminology and reuse of Value Sets maintained in the HL7 Terminology is encouraged when applicable. Other organizations also define
+	Value Sets for their own use in implementations, and these are referred to (within HL7) as External Value Sets. In most circumstances, HL7 International only defines and maintains Value Sets 
+	that are bound in Binding Realms (see Bindings) controlled by HL7 International or are used in specifications published by HL7 International.
+  </p>
+  
+  <a name="vsd-methods"> </a>
+  <h4 id="vsd-methods">Value Set Definition Methods</h4>
+  <p>
+    Two approaches can be used to define the contents of an HL7 Value Set:
+  </p>
+  <ul>
+    <li>Extensional Definition: Explicitly enumerating each of the Value Set concepts.</li>
+	<li>Intensional Definition: Defining an algorithm that, when executed by a machine (or interpreted by a human being), yields such a set of concepts.</li>
+	<li>Administrative information about the Code System, independent of any specific version of the Code System, such as ownership, source URL, and copyright information.</li>
+  </ul>
+  <p>
+    An Extensional Definition is an enumeration of all of the concepts within the Value Set. Value Sets defined by extension are composed of explicitly enumerated sets of concept representations
+	(with the Code System in which they are valid). The simplest case is when the Value Set consists of only one code.
+  </p>
+  <p>
+  An Intensional Definition is a set of rules that can be expanded (ideally computationally) to an exact list of concept representations at a particular point in time. While the construction 
+  rules can potentially be quite elaborate, HL7 has identified a small set of rules as explicit expressions that appear to be useful in most circumstances where HL7 models are used. In order
+  to share Value Set Definitions between systems if needed, HL7 strongly recommends that the HL7-created definition expression be used whenever possible.
+  </p>
+  <p>
+  If any of the definition statements in the collection making up the Value Set Definition is intensional, then the entire Value Set is considered to be intensional.
+  </p>
+  <p>
+  Some examples of the HL7-created Value Set Definition formalisms available to specify Intensional Definitions are:
+  </p>
+  <ul>
+    <li>All active unique identifiers from a given coding system (e.g. "All codes from ISO3166-1 Country Codes")</li>
+	<li>All unique identifiers that participate in a specified relationship with a given concept in a coding system, which may or may not include the specified code itself (e.g., "All LOINC codes having a SYSTEM of BLD")</li>
+	<li>The transitive subset of a given code along a given relationship type, including or excluding the code itself (e.g., "All subtypes of 112283007 Escherichia coli in SNOMED CT" including the head code)</li>
+	<li>All codes matching a particular Regular Expression</li>
+	<li>A nested Value Set definition in which a Value Set entry references another Value Set (a child Value Set).</li>
+	<ul>
+		<li>There is no preset limit to the level of nesting allowed within Value Sets.</li>
+		<li>Value Sets cannot contain themselves, or any of their ancestors (i.e., they cannot be defined recursively).</li>
+		<li>A Value Set whose definition includes nested Value Sets is always considered intensionally defined. (e.g., "Include the Value Set of Category A NIAID agents and the Value Set of Category B NIAID agents")</li>
+	</ul>
+	<li>Unions, intersections and exclusions of any of the above.</li>
+  </ul>
+  <p>
+  Note that these are examples of some Intensional Definition functions. Many others are possible, and HL7's expressions will be extended over time as the marketplace requires. 
+  </p>
+  <p>
+  The Intensional Definition must be specific enough that it is always possible at a point in time (within specific versions of the Code Systems referenced) to determine whether a given value 
+  (including post coordinated collections of codes) is a member of the Value Set. For example, an Intensional Value Set definition might be defined as, "All SNOMED CT concepts that are specializations 
+  of the SNOMED CT concept ‘Diabetes Mellitus.'"
+  </p>
+  <p>
+  A common method for specifying an Intensional Definition is to identify a concept (often referred to as a root concept or head code) that has descendants, indicating that the Value Set Expansion contains 
+  all of the descendants of the identified concept. The Intensional Definition may also specify whether the tree of the concepts to be included in the expanded Value Set includes or excludes this root concept.
+  If this root concept at the top of a tree of concepts is to be included in the expanded set, the Intensional Definition is considered Specializable. If it is explicitly excluded, and is identified just as a
+  referent for the included tree of subordinate concepts, the Intensional Definition is termed Abstract. While the terms 'abstract' and 'specializable' have been used historically in HL7, and many existing tools 
+  display the Value Set in this way; these are simply convenient labels.
+  </p>
+  <p>
+  Note that two different Value Sets may appear to have identical definitions, but when one is abstract and the other is specializable they are not identical. These are two distinct Value Sets and 
+  two distinct definitions, as they will produce value set expansions that differ by the root concept. 
+  </p>
+  
+  <a name="unique-meaning"> </a>
+  <h4 id="unique-meaning">Unique Meaning Rule</h4>
+  <p>
+    HL7 International recommends that, whenever possible, a Value Set be drawn from a single Code System. This is not always practical, however, and when a Value Set Definition includes references to more
+	than one Code System, designers should never incorporate two identical concepts from two different Code Systems in the same Value Set Definition. This is to ensure that the set does not contain more 
+	than one globally unique identifier that denotes the same concept. Care must be taken to ensure that every concept represented in the Value Set has only one possible globally unique identifier. However, 
+	designers may choose to use multiple concepts that are very similar as long as there has been consideration of the impact, and how these may be differentiated by users of application systems.
+  </p>
+  <p>
+    For example, both CPT and LOINC have codes that represent Hematocrit, meaning that there are two possible globally unique identifiers with approximately the same meaning: 4544-3 (for LOINC) and 85014 
+	(for CPT). If both of these are possible choices in a Value Set, data encoded with one code may be missed when searching using the other code, and interoperability in general may suffer. Further, 
+	dividing semantic stewardship for the Value Set can introduce semantic traps: the different source system owners may define their concepts with differences that escape one user's notice, but have 
+	a significant effect on another user's interpretation. In the above example, the CPT code specifies a test order, but does not require that the test be filled by a specific method: it refers to any
+	Hematocrit. The LOINC code, on the other hand, specifies the automated count method, specifically excluding packed cell volume tests. Equating these codes may be permissible in some contexts, but would be incorrect in others.
+  </p>
+  <p>
+    Extra care must be taken to assure that overlapping references do not appear in intensionally defined Value Sets, especially as there is no easy way to automatically determine when this situation exists.
+	Again, the easiest way to avoid this is to avoid the use of multiple Code Systems in a single Value Set wherever possible.
+  </p>
+  <a name="valueset-expansion"> </a>
+  <h4 id="valueset-expansion">Value Set Expansion</h4>
+  <p>
+    To obtain a list of enumerated concepts, Value Sets must be expanded. This means that the Value Set Definition must be converted to a list of concept representations at a point in time. This list 
+	usually consists of codes so that the Value Set Expansion may be used in populating or validating HL7 artifacts, but may alternatively be a list of designations. While this is straightforward for 
+	extensional Value Set Definitions, an intensional Value Set Definition must be resolved to a Value Set Expansion by processing the rules contained in the Value Set Definition. This process should 
+	record the exact set of definitional rules used to resolve the Value Set using the specified definition version (see below). Value Set Expansion can be done as early as the point of Value Set definition
+	or as late as run time. For statistical, legal, and analytical purposes, good practice dictates that a system which captures a coded value should be capable of reconstructing the Value Set Expansion 
+	that was in effect at the time a given code was selected.
+  </p>
+  <p>
+   A Value Set Definition does not prescribe the structure of a post-coordinated expression in a Value Set Expansion, as there is often more than one way to specify a specific concept that is legal within 
+   a post-coordination grammar. Also multiple valid Value Set Definitions could result in the identical Value Set Expansion. For intensional Value Sets, the set of concepts contained in the expansion will
+   generally change when the definition is changed (a new version of the Value Set Definition), but also may change with the identical version of the definition if the underlying code systems change, and 
+   the changes are part of the Value Set Expansion. This can be controlled if the definition statement refers to specific code system versions, thereby prohibiting the expansion from changing when the code
+   system changes with a new version release.
+  </p>
+  <p>
+    Some intensionally defined value sets, particularly those that permit post-coordinated expressions, cannot be expanded in the usual sense because their expansions are infinite (or at least so large 
+	as to make enumerating all possible values impractical). For example, the UCUM post-coordination grammar allows units to be combined together by multiplication, such as m, m2, m3, etc. The grammar 
+	places no upper limit on what multiplication is possible, so m57 and m2341688 are also legal (though highly unlikely) codes. A value set whose definition includes "all codes from UCUM" could thus 
+	never be fully enumerated (expanded). In these circumstances, implementations must instead use the algorithms that can process the expressions in the Value Set Definition to evaluate a specified 
+	code to see if it meets the constraints of the Value Set rather than fully expanding the Value Set and performing a simple look-up on the resulting list.
+  </p>
+  
+  <a name="valueset-versioning"> </a>
+  <h4 id="valueset-versioning">Value Set Versioning</h4>
+  <p>
+    A Value Set Definition can change over time. New codes may be added to or removed from an Extensional Value Set definition, and/or the rules used to construct an intensionally defined Value Set may be 
+	changed. When a Value Set Definition changes, it should be done in a way that ensures both the old and new versions are available for comparison, and for the use of specifications that explicitly 
+	reference the old version.
+  </p>
+  <p>
+   There are multiple strategies for tracking Value Set versions. Two of the most common are:
+  </p>
+  <ol>
+    <li>to increment the version number each time a change is made to the Value Set Definition</li>
+	<li>to track modification dates for each change to the Value Set Definition.</li>
+  </ol>
+  <p>
+   In HL7 standards, Value Set versions are determined by a version number or effective date (the date at which the Value Set version became effective), and not by available date (the date the Value
+   Set version was made available within an organization) . A Value Set that is versioned contains a specific Value Set Definition.
+  </p>
+  <p>
+   The set of codes comprising the expansion of an intensionally defined Value Set may change at different points in time, even using the same definition (e.g. when the underlying Code System changes
+   in certain ways). These different expansions are not different versions of the Value Set. The curation needs of persisted Value Set Expansions are outside the scope of this specification, as 
+   there are performance, architecture, and synchronization issues surrounding persistence of Value Set Expansions.
+  </p>
+  
+  <a name="valueset-immutability"> </a>
+  <h4 id="valueset-immutability">Value Set Immutability</h4>
+  <p>
+   At the time a Value Set is defined, the business Use Case or information model design may require that the definition of the Value Set never change. In order to support this, a Value Set may
+   have a property that expresses "immutability" which is a Boolean and refers to the Value Set Definition. If TRUE, the Value Set Definition may not be changed in the future. A new Value Set must
+   be created. (There can be no new versions of the Value Set). If FALSE, the Value Set may be changed, and the versioning mechanism will permit traceability of such changes. Note that an immutable
+   intensional definition may still result in an expansion that changes over time if the definition does not explicitly identify the versions of the code systems that it references, thus an “immutability”
+   property set to TRUE will not necessarily make a Value Set expansion unchangeable over time. Therefore, to completely freeze a Value Set expansion, it must have the “immutability” property set to TRUE
+   and the definition must either be Extensional or Intensional where reference is only to specific versions of the underlying code systems.
+  </p>
+</div>
