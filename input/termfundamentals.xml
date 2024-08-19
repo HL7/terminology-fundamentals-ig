@@ -16,11 +16,11 @@
   <title value="Terminology Fundamentals"/>
   <status value="draft"/>
   <experimental value="false"/>
-  <publisher value="HL7 International - Terminology Infrastructure"/>
+  <publisher value="HL7 International / Terminology Infrastructure"/>
   <contact>
     <telecom>
-      <system value="other"/>
-      <value value="http://hl7.org/Special/committees/vocab"/>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/Vocab"/>
     </telecom>
   </contact>
   <description value="The Terminology Fundamentals IG is an informative cross-paradigm IG that incorporates the basic principles of terminology that are used and described across HL7 published standards. The IG is designed to be a valuable educational resource for those seeking to enhance their understanding of terminology within the realm of HL7."/>
