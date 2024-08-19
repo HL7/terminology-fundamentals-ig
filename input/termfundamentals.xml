@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/r5/fhir-single.xsd">
   <id value="hl7.fhir.uv.termfundamentals"/>
-  <url value="http://hl7.org/fhir/uv/howto/ImplementationGuide/hl7.fhir.uv.termfundamentals"/>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
+    <valueCode value="vocab"/>
+  </extension>
+  <url value="http://hl7.org/fhir/uv/termfundamentals/ImplementationGuide/hl7.fhir.uv.termfundamentals"/>
   <version value="0.1.0"/>
   <name value="TerminologyFundamentals"/>
   <title value="Terminology Fundamentals"/>
