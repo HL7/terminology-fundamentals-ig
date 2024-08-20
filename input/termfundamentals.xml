@@ -82,8 +82,8 @@
       </page>
 	  <page>
         <name value="valuesetdefinition.html"/>
-        <title value="Value Set Definition"/>
-        <generation value="html"/>
+        <title value="Value Set Definition Specification"/>
+        <generation value="markdown"/>
       </page>
 	  <page>
         <name value="vsdoverview.html"/>
@@ -113,6 +113,11 @@
 	  <page>
         <name value="vsdexamples.html"/>
         <title value="Examples"/>
+        <generation value="markdown"/>
+      </page>
+	  <page>
+        <name value="terminologyidentifiers.html"/>
+        <title value="Identification of Terminology Artifacts"/>
         <generation value="markdown"/>
       </page>
       <page>

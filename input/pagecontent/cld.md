@@ -27,7 +27,7 @@ CLD is a content expression that can use only a single syntax. This document des
     <figcaption>Figure 4 - A Content Logical Definition is made up of a Content Expression (that can recursively contain other Content Expressions using the same grammar). 
 	The Content Expression can be an “HL7 Expression” using the functions described in this specification, it can be some other syntax or it can be a textual 
 	description of the process to be followed to obtain the correct concepts and, as such, is considered “non-computable”.</figcaption>
-</figure>
+</figure>  
 
 As is noted in the figure above and described in the caption, a CLD is expected to contain a formal specification of the set of Concept Representations to be retrieved 
 from one or more Code Systems. A “syntax-based” formalism is expected to be computable, wherein a “Non- computable” expression is assumed to be a textual description 
@@ -38,17 +38,8 @@ types of expressions noted in the figure are described in Section 6.2.4.
 ### Content Logical Definition – Elements
 
 <table class="grid">
-    <caption><b>Content Logical Definition – Elements</b></caption>
-    <thead>
-        <tr>
-            <th>Element</th>
-            <th>Definition</th>
-            <th>Description</th>
-            <th>Usage Notes</th>
-            <th>Data Type</th>
-            <th>Cardinality</th>
-        </tr>
-    </thead>
+    <tr style="font-weight: bold; background-color: #eeeeee"><td colspan="6">Content Logical Definition – Elements</td></tr>
+	<tr style="font-weight: bold;"> <th>Element</th> <th>Definition</th> <th>Description</th> <th>Usage Notes</th> <th>Data Type</th> <th>Cardinality</th></tr>
     <tbody>
         <tr>
             <td>LockedDate</td>

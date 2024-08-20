@@ -23,6 +23,9 @@
         <a href="codesystems.html">Code Systems</a>
       </li>
 	  <li>
+        <a href="valuesets.html">Value Sets</a>
+      </li>
+	  <li>
         <a href="identifiersystems.html">Identifier Systems</a>
       </li>
 	  <li>
@@ -32,7 +35,7 @@
         <a href="terminologymaps.html">Terminology Maps</a>
       </li>
 	  <li>
-        <a href="valuesets.html">Value Sets</a>
+        <a href="terminologyidentifiers.html">Terminology Identifiers</a>
       </li>
     </ul>
   </li>
@@ -45,7 +48,7 @@
         <a href="vsdoverview.html">Value Set Definition Overview</a>
       </li>
 	  <li>
-        <a href="valuesetdefinition.html">Value Set Definition</a>
+        <a href="valuesetdefinition.html">Value Set Definition Specification</a>
       </li>
 	  <li>
         <a href="cld.html">Content Logical Definition</a>
