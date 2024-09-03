@@ -45,7 +45,7 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a href="vsdoverview.html">Value Set Definition Overview</a>
+        <a href="vsdoverview.html">Characteristics of a Value Set Definition Overview</a>
       </li>
 	  <li>
         <a href="valuesetdefinition.html">Value Set Definition Specification</a>
@@ -55,6 +55,9 @@
       </li>
 	  <li>
         <a href="expressionsyntax.html">HL7 Value Set Definition Expression Syntax</a>
+      </li>
+	  <li>
+        <a href="vsexpansion.html">Value Set Expansion</a>
       </li>
 	  <li>
         <a href="vsdconsiderations.html">Implementation Considerations</a>

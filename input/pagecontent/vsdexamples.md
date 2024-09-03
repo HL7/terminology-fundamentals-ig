@@ -1,6 +1,6 @@
 
-Example Value Set content based on the HL7 Value Set Expansion Expression syntax, rendered within Microsoft Excel workbooks, are available for download at this url:
-http://wiki.hl7.org/index.php?title=HL7_VSD_Expression_Syntax
+Example Value Set content based on the HL7 Value Set Expansion Expression syntax, rendered within Microsoft Excel workbooks, are available for download at this url: 
+<a href="http://wiki.hl7.org/index.php?title=HL7_VSD_Expression_Syntax">http://wiki.hl7.org/index.php?title=HL7_VSD_Expression_Syntax</a>
 
 Currently the following two primary example groups are provided:
 

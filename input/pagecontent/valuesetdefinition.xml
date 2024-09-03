@@ -167,7 +167,7 @@
     </thead>
     <tbody>
         <tr>
-            <td>Scope</td>
+            <td><a name="scope"/>Scope</td>
             <td>textual description of the span of meanings for concepts to be included within the Value Set Expansion Code Set including the intended use and limitations of the Value Set.</td>
             <td>This is intended to convey between humans (and not necessarily in a computable fashion) the scope of Concept Representation meanings and capture important elements of the context 
 			of use for the Value Set. The scope should describe “the semantic space” the Value Set Expansion is intended to cover. This can also describe the approach taken to build the Value Set

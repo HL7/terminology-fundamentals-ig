@@ -1,11 +1,12 @@
-### Characteristics of a Value Set Definition Overview
+This guide is consistent with the previously published Characteristics of a Value Set Definition (VSD) normative specifications. Changes from the previous 
+specification are listed in the <a href="#changes">Changes from Previous Release</a> section below. The purpose of VSD is described in the sections below.
 
-#### Intended Audience
+### Intended Audience
 
 This specification is primarily intended for terminology system designers, individuals responsible for implementing standards that use terminology subsets 
-and subject matter experts tasked with creating or understanding terminology artifacts. It is assumed the readers will be familiar with the terminology material 
-in the current version of “Core Principles and Properties of HL7 Version 3 Models.”1 Some of the overview material will be important for less technically 
-focused individuals to understand as they create terminology content for use in implemented systems.  
+and subject matter experts tasked with creating or understanding terminology artifacts. It is assumed the readers will be familiar with the Terminology artifacts
+described in this guide. Some of the overview material will be important for less technically focused individuals to understand as they create terminology content
+ for use in implemented systems.  
 
 Those individuals looking for the highlights should focus on the Value Set Definition Specification section as this provides the overall structure of a Value Set. 
 They should also review the details presented in the Content Logical Definition section. The section An HL7 Value Set Definition Expression Syntax provides a 
@@ -17,7 +18,7 @@ Those readers particularly interested in understanding the set of functions used
 undertaken for defining a new standard describing An HL7 Value Set Definition Expression Syntax. While this is generally useful for Value Set implementers, 
 it is noted that other Value Set Definition Content Logical Definition formal syntaxes are now supported (see Content Expression).
 
-#### In Scope
+### In Scope
 
 This document is a normative track specification that describes the data elements that formally define and characterize (describe) how to create an HL7 conformant 
 Value Set. All references to “Value Set” and “Code System” in this document, unless specifically noted, are to an HL7 Value Set as described in this standard and 
@@ -30,7 +31,7 @@ Definition Expression Syntax section. This expression is used in the Content Log
 The document also includes informative material describing “best practices” in the use of certain elements of the Value Set Definition, such as best approach 
 versus allowed use of additional or alternative Concept Representations.
 
-#### Out of Scope
+### Out of Scope
 
 The following items have been declared explicitly out of scope for this initial release of this Standard:
 * Implications of the use of this Standard in evaluation of post-coordination concepts, even though support for inclusion of expressions is tacitly possible given 
@@ -38,7 +39,7 @@ the functionality described in the Content Logical Definition section, and the f
 * This Standard does not describe an exchange model or syntax. 
 * Content in the Appendix is included as Informative material and is not a part of the Normative material of the specification.
 
-#### Background
+### Background
 
 The definition of Value Sets is a required activity in completing the specification of most health information technology artifacts. To date, the approach 
 for such definition has not been consistent within HL7 standards. Many of the required elements and approaches for Value Set Definition are embedded in existing 
@@ -50,7 +51,7 @@ to be reliably reproduced." The HL7 Common Terminology Services Standards also d
 Set Definitions. However, to date there is not an explicit list of the precise data items needed for the Value Set Definition expressed with the imprimatur of a 
 normative standard. This standard is a major step to achieve that goal.
 
-#### Need for this Standard
+### Need for this Standard
 
 Currently, an explicit list of all the fields in an HL7 Value Set Definition has surfaced only in the informatively-balloted MIF (Message Interchange Format), 
 with a general description of the fields in the normative Core Principles specification, and the STU ballots in FHIR. A more accessible and standardized description 
@@ -65,3 +66,20 @@ within and between organizations.
 to achieve semantic interoperability in both internal and external communication.
 * In addition, implementing this Standard for Value Set Definition in applications such as repositories will support organizations in maintaining the meaning of the 
 repository content over time, facilitating data aggregation and data analysis.
+
+### DataTypes Used
+
+The data types used by this specification are based upon FHIR <a href="https://build.fhir.org/datatypes.html#primitive">Primitive Type</a> datatypes. The previous published release of Characteristics
+of a Value Set Definition used DataTypes from R2 and ISO 21090, but FHIR DataTypes were used here for access and visiblity. There may be nuances with DataTypes across the product families, and it is acceptable 
+to use another set of DataTypes. The FHIR DataTypes are intended to act as a guide.
+
+A data type not defined by FHIR but used here is COLL, which is defined as a “Group of elements”. It is a data type composed of the following components described in the subelements. 
+This is similar to the <a href="https://build.fhir.org/datatypes.html#primitive">BackboneElement</a> in FHIR.
+
+### Changes from Previous Release
+<a name="changes"/>
+ In addition to the changes to the DataTypes mentioned in the section above, 
+
+* Loosened constraints on Value Set Identifiers to align with current implementations
+* Changed name of Workflow Status element to Workflow Status Description
+* Removed maximumMultiplicity and minimumMultiplicity elements from the HL7 Value Set Definition Expression Syntax based on feedback that these elements are not used

@@ -1,4 +1,4 @@
-
+<a name="expressionsyntax"/>
 As described in the previous section, there are different syntaxes that may be used to define the content of a value set. The HL7 version 3 Model Interchange Format, Release 122 
 is a complete and existing example of such a syntax used within HL7. This section enumerates this full set of Content Expression syntax functions that can be used to define a Content 
 Expression based on the functions in the MIF standard. This format is used for all HL7 V3 Value Set Definitions and is how these Value Set Definitions are described in the thrice-annually 
@@ -516,7 +516,7 @@ Note that these parameters do not propagate across ValueSetReference instances.
             <td>1..1</td>
         </tr>
         <tr>
-            <td>&nbsp; &nbsp; VersionLockedDate</td>
+            <td><a name="versionlockeddate"/>&nbsp; &nbsp; VersionLockedDate</td>
             <td>
                 <p>a dateTime that constrains the associated code system to the single published Code System version that is current as of that dateTime.</p>
             </td>
@@ -524,13 +524,17 @@ Note that these parameters do not propagate across ValueSetReference instances.
                 <p>When specified, this date constrains the content to the most recent Code System version available at the specified point in time.<br></p>
             </td>
             <td>
-                <p>It is expected that either the VersionLockedDate or VersionLockedString will be populated in DrawnFromCodeSystem, <b>but not both </b>so there is no conflict. When specified, this element is intended to allow the computable unambiguous identification of a single Code System version. The VersionLockedDate approach <b>should only be used </b>when a VersionLockedString cannot accurately identify the desired version. The level of precision is expected to assure identification of a single unambiguous version. The Content Logical Definition element <a href="#_bookmark87">LockedDate</a> performs a similar, although global, function across the entire CLD <i>in situations where this element is <b>not </b>populated. </i>LockedDate <b>cannot </b>override this element.</p>
+                <p>It is expected that either the VersionLockedDate or VersionLockedString will be populated in DrawnFromCodeSystem, <b>but not both </b>so 
+				there is no conflict. When specified, this element is intended to allow the computable unambiguous identification of a single Code System version. 
+				The VersionLockedDate approach <b>should only be used </b>when a VersionLockedString cannot accurately identify the desired version. The level of 
+				precision is expected to assure identification of a single unambiguous version. The Content Logical Definition element <a href="#_bookmark87">LockedDate</a> 
+				performs a similar, although global, function across the entire CLD <i>in situations where this element is <b>not </b>populated. </i>LockedDate <b>cannot </b>override this element.</p>
             </td>
             <td>TS.DATE</td>
             <td>0..1</td>
         </tr>
         <tr>
-            <td>&nbsp; &nbsp; VersionLockedString</td>
+            <td><a name="versionlockedstring"/>&nbsp; &nbsp; VersionLockedString</td>
             <td>
                 <p>a string that constrains the associated Code System to the single published Code System version identified.</p>
             </td>

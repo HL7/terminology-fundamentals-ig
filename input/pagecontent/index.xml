@@ -3,7 +3,9 @@
   <a name="intro"> </a>
   <h3>Introduction</h3>
   <p>
-    Write up text for what this 
+    This Terminology Fundamentals guide describes the basic principles of terminology that are used and described across HL7 published standards. 
+Terminology Fundamentals highlights terminology basics previously published in HL7 standards while maintaining a product family agnostic approach. It is intended to serve as an educational reference for those wishing 
+to learn more about terminology across HL7, but it is not intended to provide implementation specific guidance, as other resources exist for that purpose.
   </p>
   
   <a name="terminology"> </a>
@@ -16,15 +18,16 @@
 	associated meanings are drawn. The set of codes that are allowed for a particular coded model element is referred to as a Value Set.
   </p>
   <p>
-    The tabs in this IG describe the structural properties of Concepts, Code Systems, and Value Sets, while the section after that (Vocabulary Conformance) 
-	describes the usage of these concepts in the business context of HL7 information models and data types. (NEED TO UPDATE)
+    The pages included under the Terminology Artifacts tab describe the structural properties of terminology artifacts, such as Concepts, Code Systems, Value Sets, and more. 
+	The Characteristics of a Value Set Definiton tab includes pages that describe the data elements that formally define and characterize how to create an HL7 conformant Value Set. 
+	For more information on the sources that the information was drawn from, please see the <a href="background.html">Background</a> page. 
   </p>
  
   <a name="rationale"> </a>
   <h3>The Rationale - Semantic interoperability</h3>
   <p>
     In HL7's view, interoperability requires that the systems be able to "exchange" information reliably and securely ("functional interoperability") and be
-	able to correctly and consistently interpret the information being exchanged ("semantic interoperability").
+	able to correctly and consistently interpret the information being exchanged ("semantic interoperability"). Terminology plays a huge role in enabling semantic interoperability.
   </p>
   <p>
     In the 21st Century, "functional interoperability" is increasingly easy to accomplish. what with the availability of carefully integrated computational 
