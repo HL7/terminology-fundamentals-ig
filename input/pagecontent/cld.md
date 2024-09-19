@@ -44,12 +44,12 @@ types of expressions noted in the figure are described in the section on <a href
 	<tr style="font-weight: bold;"> <th>Element</th> <th>Definition</th> <th>Description</th> <th>Usage Notes</th> <th>Data Type</th> <th>Cardinality</th></tr>
     <tbody>
         <tr>
-            <td>LockedDate</td>
+            <td><a name="lockeddate"/>LockedDate</td>
             <td>the effective date that is used to determine the version of all referenced Code Systems and Value Set Definitions included in the Content Expression that are not already tied to a specific version. </td>
             <td>
                 <p>A LockedDate provides the author the ability to restrict the Value Set Expansion Code Set content independent of Value Set use (e.g., as defined as part of HL7 v3 Binding Stability) by 
 				fixing the Code System Versions needed to determine the Value Set Expansion Code Set to the most recent Code System Version as of the LockedDate (e.g., the Code System versions and Referenced 
-				Value Set Definition versions in the CLD)<i>.</i></p>
+				Value Set Definition versions in the CLD).</p>
                 <p>If a LockedDate is present, this Value Set Definition version can only generate a Value Set Expansion Code Set that is defined by evaluating the Content Logical Definition against the 
 				most recently available version of the Code System as of the LockedDate and the most recent Value Set Definition version as of that date for any Value Set Definitions included by reference. 
 				If no LockedDate is provided, then this version of the Value Set Definition could produce different Value Set Expansion Code Set content with every new Code System version used and Value Set 
@@ -76,7 +76,7 @@ types of expressions noted in the figure are described in the section on <a href
 				<p>Given that LockedDate affects the Value Set Expansion Code Set to be used in an implementation independent of the Binding Stability within a model binding, and that LockedDate 
 				supersedes the “Static Date” that can be used to define model binding stability, it is important for model binding to consider the CLD content and any included LockedDate.&nbsp;</p>
             </td>
-            <td>??? (previously TS but I think it should be <a href="https://hl7.org/fhir/datatypes.html#dateTime">dateTime</a></td>
+            <td><a href="https://hl7.org/fhir/datatypes.html#dateTime">dateTime</a></td>
             <td>0..1</td>
         </tr>
         <tr>
@@ -118,7 +118,7 @@ types of expressions noted in the figure are described in the section on <a href
                 <p>The Content Expression syntax described in the <a href="expressionsyntax.html">An HL7 Value Set Definition Expression Syntax</a> Section will use a URL that points to 
 				the published version of this document.</p>
             </td>
-            <td>??? (previously UID but I think we want <a href="https://hl7.org/fhir/datatypes.html#uri">URI</a>)</td>
+            <td><a href="https://hl7.org/fhir/datatypes.html#uri">uri</a>)</td>
             <td>0..1</td>
         </tr>
         <tr>
@@ -128,7 +128,7 @@ types of expressions noted in the figure are described in the section on <a href
             </td>
             <td>
                 <p>If this is a non-computable expression, then the text should describe a method (or set of steps) that can be used to identify the concept representations to be included in the value set 
-				expansion. If this is a computable expression, then the text should contain the complete expression needed, rendered using the syntax noted in <a href="cldsyntaxreference">CLDSyntaxReference.</a> 
+				expansion. If this is a computable expression, then the text should contain the complete expression needed, rendered using the syntax noted in <a href="#cldsyntaxreference">CLDSyntaxReference.</a> 
 				When evaluated based on an approach appropriate for the defined syntax, this should result in identifying a Value Set Expansion Code Set of Concept Representations (usually codes) from the 
 				Code Systems identified within the expression.</p>
             </td>
@@ -154,7 +154,7 @@ only the “HL7 Value Set Definition Expression Syntax” was supported.
 
 An incomplete list of Other Syntax examples that may be used includes:
 * <a href="https://confluence.ihtsdotools.org/display/DOCECL">SNOMED CT Expression Constraint Language</a>
-* OWL [NEED LINK]
+* <a href="https://www.w3.org/OWL/">OWL</a>
 * <a href="https://en.wikipedia.org/wiki/SQL">SQL</a>
 * <a href="http://www.apelondts.org/FAQs">Apelon Terminology Query Language (TQL)</a>
 

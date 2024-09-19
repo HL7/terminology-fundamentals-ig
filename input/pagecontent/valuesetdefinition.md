@@ -359,7 +359,7 @@ to a particular version of a Value Set Definition.
             <td>1..1</td>
         </tr>
         <tr>
-            <td>Activity Status Date</td>
+            <td><a name="activitystatusdate"/>Activity Status Date</td>
             <td>
                 <p>the date when the associated Value Set Definition Version activity status is in effect.</p>
             </td>
@@ -373,7 +373,7 @@ to a particular version of a Value Set Definition.
 				Definition, as referenced in a CD, will be problematic.</p>
                 <p>Changes to this element should never result in a new Value Set Definition Version.</p>
             </td>
-            <td>TS (<a href="https://www.hl7.org/fhir/datatypes.html#date">date</a> or <a href="https://www.hl7.org/fhir/datatypes.html#dateTime">dateTime</a>???)</td>
+            <td><a href="https://www.hl7.org/fhir/datatypes.html#dateTime">dateTime</a></td>
             <td>1..1</td>
         </tr>
         <tr>
@@ -510,7 +510,7 @@ to a particular version of a Value Set Definition.
 				resident in a specific Value Set Expansion Code Set.</p>
             </td>
             <td>
-                <p>UID (OID, UUID, URI or RUID) (replace with <a href="https://www.hl7.org/fhir/datatypes.html#uri">uri</a>???)</p>
+                <p><a href="https://www.hl7.org/fhir/datatypes.html#uri">uri</a></p>
             </td>
             <td>
                 <p>0..*</p>
@@ -532,7 +532,7 @@ Creation Information contains the initial creation user data for the Value Set D
             <td>when the Value Set Definition was originally created.</td>
             <td>This element records the date-time when the first draft of the Value Set Definition was saved.</td>
             <td>The expectation is that if the creation date is unknown, that one will be asserted when the Value Set Definition is entered into the system.</td>
-            <td>TS (<a href="https://www.hl7.org/fhir/datatypes.html#date">date</a> or <a href="https://www.hl7.org/fhir/datatypes.html#dateTime">dateTime</a>???)</td>
+            <td><a href="https://www.hl7.org/fhir/datatypes.html#dateTime">dateTime</a></td>
             <td>
                 <p>1..1</p>
             </td>
@@ -569,7 +569,7 @@ such changes. Any change of any kind can result in a revision history item.
             <td>
                 <p>This should be captured precisely enough to prevent confusion. In most cases, a date may work, but particularly volatile cases may require greater precision such as down to the second.</p>
             </td>
-            <td>TS (<a href="https://www.hl7.org/fhir/datatypes.html#date">date</a> or <a href="https://www.hl7.org/fhir/datatypes.html#dateTime">dateTime</a>???)</td>
+            <td><a href="https://www.hl7.org/fhir/datatypes.html#dateTime">dateTime</a></td>
             <td>1..1</td>
         </tr>
         <tr>

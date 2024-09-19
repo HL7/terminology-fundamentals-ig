@@ -35,7 +35,7 @@
   </p>
   
   <a name="sub-domains"> </a>
-  <h4 id="sub-domains">Examples of Concept Domains</h4>
+  <h4 id="sub-domains">Sub-Domains</h4>
   <p>
     One Concept Domain may be defined to be "sub-domain" of another. This means that the intended meaning and reference of the sub-domain is intended to be narrower than the meaning 
 	of the parent. For example, there is a domain ObservationMethod, with a sub-domain of GeneticObservationMethod. This is not intended to be an ontological assertion; its primary 
