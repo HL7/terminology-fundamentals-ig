@@ -168,7 +168,7 @@ Value Set Definition. This collection of elements is made up of an identifier an
             </td>
             <td>This repeating group of elements contains information about the human- readable strings associated with this Value Set Definition that are used as names.</td>
             <td></td>
-            <td>COLL (listed following)</td>
+            <td><a href="https://www.hl7.org/fhir/types.html#BackboneElement">backbone</a> (listed following)</td>
             <td>1..*</td>
         </tr>
         <tr>
@@ -283,7 +283,9 @@ to a particular version of a Value Set Definition.
             <td>Value Set Definition Version Identifier</td>
             <td>a unique string labeling a Value Set Definition Version.</td>
             <td>A unique identifier within the context of the Value Set Definition that is used to indicate a specific Value Set Definition at a point in time.</td>
-            <td>The identifier must be updated when any of the "Definitional metadata elements" of the Value Set Definition have changed. In addition, it may be updated under other circumstances. This may be a string identifier of any type or may explicitly be a timestamp, which is often used to simplify dynamic binding processing. If the string is intended to be encoded as a timestamp consistent with HL7 Datatypes R2, the format should be TS.DATETIME.FULL.</td>
+            <td>The identifier must be updated when any of the "Definitional metadata elements" of the Value Set Definition have changed. In addition, it may be updated under other circumstances. 
+			This may be a string identifier of any type or may explicitly be a timestamp, which is often used to simplify dynamic binding processing. If the string is intended to be encoded as a 
+			timestamp consistent with HL7 Datatypes R2, the format should be TS.DATETIME.FULL.</td>
             <td><a href="https://www.hl7.org/fhir/datatypes.html#string">string</a></td>
             <td>1..1</td>
         </tr>
@@ -291,8 +293,9 @@ to a particular version of a Value Set Definition.
 </table>
 
 <table class="grid">
-    <tr style="font-weight: bold; background-color: #eeeeee"><td colspan="6">Value Set Definition Version — Definitional Elements<br><br>If either of the elements within this section changes in any way, then a new Value Set Definition Version must be created with a new Value Set Version Identifier assigned but the 
-		Value Set Identifier does not change.</td></tr>
+    <tr style="font-weight: bold; background-color: #eeeeee"><td colspan="6">Value Set Definition Version — Definitional Elements<br><br>If either of the elements within this section changes in any way, then a new Value 
+	Set Definition Version must be created with a new Value Set Version Identifier assigned but the Value Set Identifier does not change.<br><br>Note: If a content logical definition content expression contains Concept 
+	Representations that can change yet are still considered a representation of the same concept, then the value set version may change due to a Code System Version change alone.</td></tr>
 	<tr style="font-weight: bold;"> <th>Element</th> <th>Definition</th> <th>Description</th> <th>Usage Notes</th> <th>Data Type</th> <th>Cardinality</th></tr>
     <tbody>
         <tr>
@@ -313,8 +316,6 @@ to a particular version of a Value Set Definition.
                 <p>The HL7 Expression functions are an available syntax for the CLD that is described below, possibly including some recursive elements. Each recursive section is 
 				considered a “clause”. The Value Set Definition Version contains a single mandatory Content Logical Definition that describes different types of specifications of 
 				content, some of which contain or reference Content Logical Definitions; thus the definition is inherently recursive. The list of functions is described in Section 6.</p>
-                <p>If a content logical definition content expression contains Concept Representations that can change yet are still considered a representation of the same concept, 
-				then the value set version may change due to a Code System Version change alone.</p>
             </td>
             <td>ED (???)</td>
             <td>1..1</td>
@@ -355,7 +356,7 @@ to a particular version of a Value Set Definition.
 					<figcaption><b>Figure 3</b> Valid state transitions for Value Set Activity Status</figcaption>
 					</figure></p>
             </td>
-            <td>CS ???</td>
+            <td><a href="https://www.hl7.org/fhir/datatypes.html#coding">coding</a></td>
             <td>1..1</td>
         </tr>
         <tr>
@@ -441,7 +442,7 @@ to a particular version of a Value Set Definition.
             <td>
                 <p>Changes to this element should never result in a new Value Set Definition Version.</p>
             </td>
-            <td>COLL (listed following)</td>
+            <td><a href="https://www.hl7.org/fhir/types.html#BackboneElement">backbone</a> (listed following)</td>
             <td>0..*</td>
         </tr>
         <tr>

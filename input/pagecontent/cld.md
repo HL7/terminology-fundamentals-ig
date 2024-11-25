@@ -128,7 +128,7 @@ types of expressions noted in the figure are described in the section on <a href
             </td>
             <td>
                 <p>If this is a non-computable expression, then the text should describe a method (or set of steps) that can be used to identify the concept representations to be included in the value set 
-				expansion. If this is a computable expression, then the text should contain the complete expression needed, rendered using the syntax noted in <a href="#cldsyntaxreference">CLDSyntaxReference.</a> 
+				expansion. If this is a computable expression, then the text should contain the complete expression needed, rendered using the syntax noted in <a href="cldsyntaxreference">CLDSyntaxReference.</a> 
 				When evaluated based on an approach appropriate for the defined syntax, this should result in identifying a Value Set Expansion Code Set of Concept Representations (usually codes) from the 
 				Code Systems identified within the expression.</p>
             </td>
