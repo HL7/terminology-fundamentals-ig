@@ -118,7 +118,7 @@ types of expressions noted in the figure are described in the section on <a href
                 <p>The Content Expression syntax described in the <a href="expressionsyntax.html">An HL7 Value Set Definition Expression Syntax</a> Section will use a URL that points to 
 				the published version of this document.</p>
             </td>
-            <td><a href="https://hl7.org/fhir/datatypes.html#uri">uri</a>)</td>
+            <td><a href="https://hl7.org/fhir/datatypes.html#uri">uri</a></td>
             <td>0..1</td>
         </tr>
         <tr>

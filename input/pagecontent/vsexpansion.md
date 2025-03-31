@@ -3,5 +3,5 @@ A Value Set Expansion Code Set is the complete enumeration of the member list of
 Value Set Definition and Value Set Expansion relate to each other is described <a href="valuesetdefinition.html#relationship-between-the-value-set-definition-and-value-set-expansion-code-set">here</a>.  
 
 While there is no equivalent specification for Value Set Expansions as there is for the Definition, the Canonical Resource Management Infrastructure (CRMI) Implementation Guide 
-describes the elements required to define a Value Set Expansion through the <a href="https://hl7.org/fhir/R5/executablevalueset.html">ExecutableValueSet</a> profile. 
+describes the elements required to define a Value Set Expansion through the <a href="https://hl7.org/fhir/uv/crmi/StructureDefinition-crmi-expandedvalueset.html">ExpandedValueSet</a> profile. 
 While this specification is realized in FHIR, it can be generalized to conform to other product family implementations. 

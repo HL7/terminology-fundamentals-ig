@@ -30,7 +30,7 @@ to learn more about terminology across HL7, but it is not intended to provide im
 	able to correctly and consistently interpret the information being exchanged ("semantic interoperability"). Terminology plays a huge role in enabling semantic interoperability.
   </p>
   <p>
-    In the 21st Century, "functional interoperability" is increasingly easy to accomplish. what with the availability of carefully integrated computational 
+    In the 21st Century, "functional interoperability" is increasingly easy to accomplish with the availability of carefully integrated computational 
 	and communication environments in which to implement. "Semantic Interoperability," however, poses major challenges, particularly for the enterprise of health care in which:
   </p>
   <ul>
