@@ -67,5 +67,24 @@
 	order of components, and potentially even character set. For example "02.5" would not match with "2-5"; "2001/03/05" would not match with "05-03-2001", etc. The registration should indicate enough information 
 	about versioning and the syntax of the version string so as to make the machine processing of the version string a reasonable expectation.
   </p>
-  
+  <a name="codesystem-partitions"> </a>
+  <h4 id="codesystem-partitions">Code System Partitions and Supplements</h4>
+  <p>
+  Code System Partitions are a unique and identifiable distinct segment of an overall Code System namespace. While most Code Systems are in essence one partition and, therefore, do not have 
+identifiable partitions, some Code Systems can be made up of a collection of distinct segments. SNOMED CT is a prototypical example of such a Code System. The SNOMED CT International Edition 
+is the base partition and can be used alone, but there are many distinct additional partitions that can be added to the international core to create what is known as “a SNOMED CT Edition”. 
+Both the international core and an edition will have the same Code System Identifier (OID: 2.16.840.1.113883.6.96), but each unique edition can be distinguished by the partition identifiers 
+used to create the edition. For SNOMED CT it seems likely that the “moduleID” can be used as the partition identifier. It should be noted that partitions can introduce new concepts and any 
+other construct typical for a Code System to the resulting “complete” Code System.  
+  </p>
+  <p>
+Code System Supplements contain information that may (and when useful for Value Set Definitions, do) contain additional attributes and properties that are associated with concepts. 
+Code System Supplements cannot add additional concepts to a code system; they may only add attributes to existing concepts within the aligned Code System. In this way a Code System Supplement 
+is differentiated from a Code System Partition, as a partition is effectively a segment of the aligned code system namespace and may add additional concepts to the Code System.  
+  </p>
+  <p>
+Examples of a Code System Supplement include <a href="https://infocentral.infoway-inforoute.ca/en/standards/canadian/pclocd-loinc">pCLOCD</a>, but can also be as simple as frequency counts that describe usage statistics for concepts in a particular context. 
+Because this supplemental information can be directly tied to individual concepts, Code System Supplements can be used as part of a Value Set Definition Content Expression to determine Value Set 
+Expansion Code Set membership. Code System Supplements must have some sort of identifying information so that they may be uniquely identified and accessed and must identify the Code System to which they are associated.
+  </p>
 </div>

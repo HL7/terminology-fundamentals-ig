@@ -139,34 +139,82 @@ types of expressions noted in the figure are described in the section on <a href
     </tbody>
 </table>
 
-#### Content Expression
+### Content Expression
 <a name="contentexpression"/>
 The Content Expression holds the text (potentially combined with the LockedDate) that is used to determine what Concept Representations (codes) should be included in a Value Set Expansion Code Set. 
-There is great value in making this text directly computable, which is supported by the CLDSyntaxReference element that identifies the expression syntax used by the Content Expression text. Based on 
-comments received on the initial version of this document, this updated specification is purposefully open regarding how a Content Expression can be represented. Even so, there are two approaches to 
-the information provided in the Content Expression: those that are computable and therefore are based on the use of a specific evaluable syntax (and therefore should have a CLDSyntaxDescription) and 
-those that are not using a computable syntax, are non-computable and essentially contain textual guidance for how the codes to be included in the Value Set Expansion Code Set are to be identified. In 
-the sections below the types are discussed further.  
+There is great value in making this text directly computable, which is supported by the CLDSyntaxReference element that identifies the expression syntax used by the Content Expression text. There are two approaches to 
+the information provided in the Content Expression: those that are computable and therefore are based on the use of a specific evaluable syntax or structure (and therefore should have a CLDSyntaxDescription) and 
+those that are not using a computable syntax or structure, are non-computable and essentially contain textual guidance for how the codes to be included in the Value Set Expansion Code Set are to be identified. The types are discussed further in the sections below.  
 
-In addition to the Default HL7 Expression Syntax just noted, other syntaxes may be used for a Content Expression. Support for “Other Syntax Expression” types means that any reasonable syntax can be 
-used to computationally describe how to identify a specific set of Concept Representations (usually codes) from Code System(s). This is a change from the initial version of this specification where 
-only the “HL7 Value Set Definition Expression Syntax” was supported.  
-
-An incomplete list of Other Syntax examples that may be used includes:
-* <a href="https://confluence.ihtsdotools.org/display/DOCECL">SNOMED CT Expression Constraint Language</a>
-* <a href="https://www.w3.org/OWL/">OWL</a>
-* <a href="https://en.wikipedia.org/wiki/SQL">SQL</a>
-* <a href="http://www.apelondts.org/FAQs">Apelon Terminology Query Language (TQL)</a>
-
-##### Syntax-based Content Expressions
+#### Computable Content Expression
 
 As has been described elsewhere in the document, the intention of this specification is to support the computable determination of specified Concept Representations (codes) from Code Systems as 
-delivered in Value Set Expansion Code Sets for use in data capture and exchange. To support ease of creation, maintenance and use, it is preferred that the Content Expression is directly computable. 
-To do so, the syntax used to represent the “expression” used to compute the Value Set Expansion Code Set must be clearly specified and allow full use of the Code System (and additional data sources) 
-to determine what codes are wanted. A complete set of syntax functions that may be used to fully specify a Content Expression is described in the An HL7 Value Set Definition Expression Syntax Section. 
-This section should be considered a default HL7 Content Expression Syntax.
+delivered in Value Set Expansion Code Sets for use in data capture and exchange. To support ease of creation, maintenance and use, it is preferred that the Content Expression is directly computable. Computable Content Expressions include those that are syntax-based and structure-based. 
 
-##### Non-computable Content Expression
+##### Syntax-based Content Expression
+
+The syntax used to represent the “expression” used to compute the Value Set Expansion Code Set must be clearly specified and allow full use of the Code System (and additional data sources) 
+to determine what codes are wanted. A complete set of syntax functions that may be used to fully specify a Content Expression is described in <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=437">HL7 Specification: Characteristics of a Value Set Definition, Release 1</a> in the HL7 Value Set Definition Expression Syntax Section and is summarized later in this section. 
+
+In addition to the HL7 Expression Syntax just noted, other syntaxes may be used for a Content Expression. Support for “Other Syntax Expression” types means that any reasonable syntax can be 
+used to computationally describe how to identify a specific set of Concept Representations (usually codes) from Code System(s). 
+
+An incomplete list of Other Syntax examples that may be used includes:
+* <a href="https://confluence.ihtsdotools.org/display/DOCECL">SNOMED CT Expression Constraint Language (ECL)</a>
+* <a href="https://www.w3.org/OWL/">Web Ontology Language (OWL)</a>
+* <a href="https://en.wikipedia.org/wiki/SQL">Structured Query Language (SQL)</a>
+* <a href="https://apelon.com/dts-documentation/#dts-tql-doc">Apelon Terminology Query Language (TQL)</a>
+
+###### HL7 Value Set Definition Expression Syntax Overview
+This sections intends to summarize the types of functions covered by the HL7 Value Set Definition Expression Syntax. For the full specification, see the <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=437">HL7 Specification: Characteristics of a Value Set Definition, Release 1</a>. 
+
+The HL7 Value Set Definition Expression Syntax is comprised of two main components; the Content Defining Element Types and the Source Code System Specification. 
+
+The Content Defining Element Types describe what kinds of content can be included in a Value Set Expansion Code Set. They act as building blocks of the expression and use the elements described below:
+1.	CodeSystemElement - uses Concept Representations (codes) directly from a source Code System; the types are described below:
+    * CodeBasedContent – includes specific Concept Representations and/or their descendants.
+    * PropertyBasedContent – includes Concept Representations based on properties held (or not held) by concepts.
+    * RelationshipBasedContent – includes Concept Representations based on relationships held (or not held) by concepts (e.g., “finding site = lung”).
+    * CodeFilterContent – includes Concept Representations based on operations performed on the string value of codes (e.g., codes starting with "A5").
+2.	ValueSetReference – includes Concept Representations defined by another Value Set Definition.
+3.	CombinedContent – applies set operations (union, intersection, exclusion) to combine multiple Content Expressions.
+
+The Source Code System Specification defines where the Concept Representations come from and ensures unambiguous identification of the content. It uses the elements described below:
+*	DrawnFromCodeSystem – specifies the Code System, its version (by date or string), and optionally partitions or supplements.
+*	CodeSystemConstraintParameters – declares a set of constraints on the DrawnFromCodeSystem or on the Concept Representations in that Code System (e.g., include short vs. long name).
+*	AllowedQualifiers – specifies constraints on which qualifiers may be used with a Concept Representation when post-coordinated expressions are created (e.g., only include "finding site" and its value).
+
+In summary, Content Defining Elements describe what codes to include/exclude while the Source Code System Specification anchors those expressions to a precise code system and version, ensuring that the included codes are drawn consistently and reproducibly. Together, they allow a Value Set Definition combine logic (which codes, relationships, properties) with provenance (which system/version), producing a computable, reliable Value Set Expansion Code Set.
+
+##### Structure-based Content Expression
+Computable Content Expressions may also be structure-based. An example of this is the FHIR valueSet.compose element and its sub-elements. The structure of the <a href="https://hl7.org/fhir/valueset-definitions.html#ValueSet.compose">valueSet.compose</a> decribes which codes are included or excluded from the Value Set Expansion Code Set. ValueSet.compose covers the same ideas as a syntax-based Content Expression, but does so as a structured resource model rather than a text-based syntax. 
+
+To illustrate the differences between a syntax-based and structure-based computable expression, the following example of including all descendants of a SNOMED CT concept is provided in both formats below. 
+
+SNOMED CT ECL (system is assumed to be SNOMED CT as the language is specific to SNOMED CT content):
+```
+< 404684003
+```
+
+FHIR ValueSet.compose:
+```
+"compose": {
+  "include": [
+    {
+      "system": "http://snomed.info/sct",
+      "filter": [
+        {
+          "property": "concept",
+          "op": "is-a",
+          "value": "404684003"
+        }
+      ]
+    }
+  ]
+}
+```
+
+#### Non-computable Content Expression
 
 Some descriptions of Code System content cannot be captured in a computable syntax. This can occur for a variety of reasons, such as when the needed codes are not identified using computable parameters 
 (e.g., “the codes representing conditions currently under discussion in the US Public Health blog”) or when an initial version of the CLD is crafted as a general textual statement using “pseudo-code”. 
