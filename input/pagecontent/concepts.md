@@ -22,14 +22,14 @@ whereas the code "M" in the in the <a href="http://terminology.hl7.org/CodeSyste
 "Sioux" in the Race &amp; Ethnicity – CDC Code System, and the code "1609-7" which signifies "Prolactin^1.5H post dose insulin IV" in the LOINC Code System. Codes do 
 not have explicit semantics without their Code Systems, and cannot be referenced without identifying the code system in which they are published.  
 
+A Coding is a Concept Representation that includes both the Code and the system that identifies where the definition of the code comes from. 
+
+A Codeable Concept is a Concept Representation that represents a concept by plain text and/or one more Codings.
+
 A Concept Identifier is defined as a Concept Representation that may be published by the Code System author, and unambiguously represents the concept internally 
 within the context of that Code System. Such an object used for identification, when combined with the unique identifier of the Code System itself (a machine-processable 
 unique string), provides a globally unique and language-independent identification for the particular concept. This globally unique identification can be used in transactions 
-and data records that span both space and time. In some cases, multiple synonymous identifiers may be present for the same concept.  
-
-A Coding is a Concept Representation is a structured way to represent a specific concept using 
-
-Codeable Concept (placeholder)  
+and data records that span both space and time. In some cases, multiple synonymous identifiers may be present for the same concept.   
 
 A Designation is defined as a language symbol Concept Representation that may be published by the Code System author for a concept, and are intended to convey meaning to a human being. 
 These are additional representations for the concept. Use cases include other languages or aliases used for particular purposes for a concept. A Designation is typically used to 
@@ -41,13 +41,14 @@ The following table may help to clarify the differences in meanings and uses of 
 	<tr style="font-weight: bold; background-color: #eeeeee"><td colspan="4">Some Names and Uses for Concept Representations</td></tr>
 	<tr style="font-weight: bold;"> <th>Name</th> <th>Definition</th> <th>Primary HL7 Use</th> <th>Examples</th></tr>
 	<tr> <td>Code</td> <td>An identifier for a concept intended for use when representing a concept in a computable manner. For example, passing into a decision support tool or for use in data exchange. 
-	Some code systems use human-readable mnemonics for these.</td> <td>Pass information between or shared by different systems in a computable manner.</td> <td>HL7 AdministrativeGender: F<br>
+	Some code systems use human-readable mnemonics for these.</td> <td>Pass information between or shared by different systems in a computable manner.</td> <td>*systems are implied*<br>HL7 AdministrativeGender: F<br>
 	LOINC:6690-2<br>SNOMED CT:233607000<br>UCUM:L, mg/L</td></tr>
+	<tr> <td>Coding</td> <td>Includes both the Code and the system that identifies where the definition of the code comes from.</td> <td>Pass information between or shared by different systems in a computable manner when information is being sent by different code systems.</td> <td>*system is provided*<br>HL7 AdministrativeGender: F<br>
+	LOINC:6690-2<br>SNOMED CT:233607000<br>UCUM:L, mg/L</td></tr>
+	<tr> <td>Codeable Concept</td> <td>Represents a concept by plain text and/or one more Codings.</td> <td>Pass information between or shared by different systems in a computable manner when expressing the same concept across multiple code systems or to allow unstructured text if coding isn't available.</td> <td>"Pneumococcal Pneumonia"<br>SNOMED CT:<br>Pneumococcal pneumonia (disorder) [233607000]<br>ICD-10-CM:<br>Pneumonia due to Streptococcus pneumoniae [J13]</td></tr>
 	<tr> <td>Concept Id</td> <td>A concept representation that is unique within the code system and that is used internally by the code system when referencing concepts.</td> <td>Many code systems use 
 	the same value for Concept Code and Concept Identifier, therefore the Concept Identifier may be used in CD.code; however, it is often used as a component of maps and ontologies outside of HL7 
 	interoperability standards. Some Code Systems have more than one Concept Identifier for a concept.</td> <td>HL7 AdministrativeGender: F<br>LOINC:6690-2<br>SNOMED CT:233607000<br>UCUM: m, g, L</td></tr>
-	<tr> <td>Coding</td> <td></td> <td></td> <td></td></tr>
-	<tr> <td>Codeable Concept</td> <td></td> <td></td> <td></td></tr>
 	<tr> <td>Designation</td> <td>Human consumable representation of the concept; may or may not be a string of characters; generally subject to language variants.</td> <td>Human language representation 
 	of the concept. A concept has 1..* of these. Often language-dependent, i.e. a set of English designations, a set of French designations, etc.</td> <td>HL7 AdministrativeGender:<br>Female<br>
 	<br>LOINC:<br>Leukocytes [#/volume] in Blood by Automated Count<br>WBC #Bld Auto<br><br>SNOMED CT:<br>Pneumococcal pneumonia (disorder)<br><br>UCUM:<br>Litre<br>

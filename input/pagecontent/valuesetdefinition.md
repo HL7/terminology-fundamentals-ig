@@ -339,22 +339,16 @@ to a particular version of a Value Set Definition.
             <td>
                 <p>The Activity Status should track the status with regards to the Value Sets availability for use in a publishing environment context. Changes to this element should never result in a new Value 
 				Set Definition Version.</p>
-                <p>This element has the following allowed values:</p>
+                <p>The following are values that can be used:</p>
                 <ul>
 					<li>Preliminary: State during which time the Value Set Definition version is being drafted and is not available for use. The element Workflow Status Descripition will carry additional information regarding pre-Active state.</li>
 					<li>Active: State during which the Value Set Definition version is available for use. The Activity Status Date associated with this status is known as the “Effective Date”.</li>
 					<li>Inactive: State indicating that the Value Set Definition version is no longer available for use in creating new content. The Activity Status Date associated with this status is known as the “Expiration Date”.</li>
 					<li>Deleted: State intended to be used to remove a Value Set Definition from use and view in a repository and is only possible if the Value Set was never Active (i.e., can only transition from Preliminary).</li>
 				</ul>
-                <p>Since activity status is only represented here in Value Set Definition Version information and is a required element, then any Value Set Definition that does not have this is <i>not valid. </i>Furthermore, 
+                <p>Note that systems and organizations often need their own custom workflows depending on their use case, so the values given are examples. Since activity status is only represented here in Value Set Definition Version information and is a required element, then any Value Set Definition that does not have this is <i>not valid.</i>Furthermore, 
 				a Value Set Definition may have more than one Value Set Definition Version with any of the status states noted. Given that this can lead to overlapping Active definitions, external governance must be available
 				to either restrict the allowed overlap or resolve overlap if usage does not specify a particular Value Set Definition Version.</p>
-                <p><figure>
-					<img src="{{site.baseurl}}activitystatus.png"
-						alt="Activity Status Workflow"
-						style="width: 100%;">
-					<figcaption><b>Figure 3</b> Valid state transitions for Value Set Activity Status</figcaption>
-					</figure></p>
             </td>
             <td><a href="https://www.hl7.org/fhir/datatypes.html#coding">coding</a></td>
             <td>1..1</td>
