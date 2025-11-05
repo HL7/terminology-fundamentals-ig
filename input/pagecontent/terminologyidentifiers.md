@@ -46,7 +46,7 @@ support HL7 products. Internal THO content includes both the identifiers and the
 
 External content refers to terminology artifacts that are published and maintained outside of HL7. To ensure consistent use across HL7 implementations, information about the code systems 
 and identifier systems are stored in THO for reference. These external records include all known identifiers for those systems as well as useful information about the systems. External 
-records do not generally include the complete content, unless an agreement with HL7 has been made for republishing. The [HL7 Terminology Authority](https://confluence.hl7.org/display/TA/Terminology+Authority) maintains the external records and provides 
+records do not generally include the complete content, unless an agreement with HL7 has been made for republishing. The [Terminology Services Management Group](https://confluence.hl7.org/spaces/TSMG/pages/79503180/Terminology+Services+Management+Group+Home) maintains the external records and provides 
 guidance for [Validating and Requesting Identifiers for External Code Systems and Identifier Systems](https://confluence.hl7.org/display/TA/Validating+and+Requesting+Identifiers+for+External+Code+Systems+and+Identifier+Systems).  
 
 Note that there is significant cross-over between the identifiers being published via the HL7 OID registry and THO.  

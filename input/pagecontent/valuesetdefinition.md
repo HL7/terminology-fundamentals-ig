@@ -11,8 +11,8 @@ When most people think of a Value Set, they think of a list of codes or phrases.
 Value Set, the final set of Code System members used by implementers, which is called the Value Set Expansion in this specification, is only one part of the collective information 
 that _is a Value Set_.  
 
-A Value Set is a specification composed of general metadata that is true for all versions of the Value Set8 and version-specific information that describes the content of the 
-Value Set9. Some of the information conveyed in the specification is not intended to be machine computable, but carries information users may interpret. Other elements in the 
+A Value Set is a specification composed of general metadata that is true for all versions of the Value Set (green items in the <a href="valuesetdefinition#class-model-diagram.html">Class Model Diagram</a> below) and version-specific information that describes the content of the 
+Value Set (yellow items in the <a href="valuesetdefinition#class-model-diagram.html">Class Model Diagram</a> below). Some of the information conveyed in the specification is not intended to be machine computable, but carries information users may interpret. Other elements in the 
 specification are intended to be directly computable so that automated systems may act upon this information and exhibit reliable behavior.  
 
 Also included are critical metadata used to identify the people and entities that are responsible for developing and maintaining the Value Set Definition, Value Set Definition 
@@ -27,14 +27,14 @@ The phrase "Value Set" usually is taken to mean both of the following:
 *   **Value Set Definition**, a description of the set of Concept Representations (usually codes) that are intended for use, **plus** the
 *   **Value Set Expansion Code Set**, the set of resulting codes actually obtained for a particular use, drawn from one or more specific Code System versions.
 
-Yet as is shown in this specification and in Core Principles, these are not exactly the same thing. In general, when the phrase “Value Set” is used (including within this specification), 
+Yet as is shown in this specification, these are not exactly the same thing. In general, when the phrase “Value Set” is used (including within this specification), 
 the intent is to reference both the Value Set Definition and the Value Set Expansion Code Set as one, in that the distinction is immaterial for the point being made. From this point 
 forward in this document one of the more specific phrases is used when one or the other item is under discussion in particular and the difference is important to note.  
 
 A Value Set Definition is a set of metadata that describes the scope of the intended member Concept Representations, provenance of the included information and, most importantly, a set 
 of instructions that describe (preferably in a computable manner) which Code System Concept Representation, which is almost always a code, should be in the Value Set Expansion Code Set. 
 As such, the Value Set Definition is then applied to one or more Code System instances to determine the Value Set Expansion Code Set Member Concept Representations. In essence the Value 
-Set Definition (specifically the Content Logical Definition described below) is a set of functions against the Code System to retrieve the concepts as described in the definition. This 
+Set Definition (specifically the <a href="cld.html">Content Logical Definition</a>) is a set of functions against the Code System to retrieve the concepts as described in the definition. This 
 is true for every Value Set Definition. It is not restricted to only definitions that use a logical or “intensional” definition; it is also true for simple explicit lists of individually 
 selected concepts (“extensional.”) As long as the Value Set Definition is not locked to a single Code System version, even simple code lists can result in changing Value Set Expansion Code 
 Sets if the codes in the original definition are retired in later Code System versions. In summary, only a Value Set Expansion Code Set (see Figure 1 below and also the <a href="vsexpansion.html">Value Set Expansion</a> page) will contain 
@@ -45,7 +45,7 @@ the accurate Expansion Code Set Member Concept Representations that are the resu
 There are two approaches to defining Value Sets (think of these as “types” of a value set definition), Intensional and Extensional, repeated in part here for clarity:
 
 *   _Extensional Definition_: Explicitly enumerating each of the Value Set concepts.
-*   _Extensional Definition_: Explicitly enumerating each of the Value Set concepts.
+*	_Intensional Definition_: Defining an algorithm that, when executed by a machine (or interpreted by a human being), yields the desired set of elements.
 
 Both approaches are used frequently in defining Value Sets but intensional definitions may use text that is not directly computable and therefore requires human interpretation to 
 determine a reliable set of concepts that make up the actual Value Set Expansion Code Set.
@@ -82,7 +82,7 @@ a non-zero lower cardinality are required.
 Each of the following sections is structured to align with the UML Model categories noted in the diagram above. Each of the primary sections below are sub-divided to indicate if the 
 element described is definitional or non-definitional, where definitional elements, when changed, must result in either an entirely new Value Set (for the Value Set Elements) or a new 
 Value Set version (for Value Set Version Elements). Elements that are derived from other elements are also identified. Each section below describes the details of the components 
-illustrated in Figure 2 - Value Set Metadata.
+illustrated in <b>Figure 2 - Value Set Metadata</b>.
 
 #### Implied Constraints of “Definitional” and “Non-definitional” Elements
 
@@ -97,7 +97,7 @@ that is based on a change in a non-definitional element is not considered best p
 #### Value Set Definition
 
 Elements described in this section provide identification and descriptive information about the entire Value Set Definition and can be consistently applied to all versions of the 
-Value Set Definition. This collection of elements is made up of an identifier and two categories of model elements: definitional and non-definitional. These categories are described in Implied Constraints above.  
+Value Set Definition. This collection of elements is made up of an identifier and two categories of model elements: definitional and non-definitional. These categories are described in <a href="#implied-constraints-of-definitional-and-non-definitional-elements">Implied Constraints</a> section above.  
 
 <table class="grid">
 	<tr style="font-weight: bold; background-color: #eeeeee"><td colspan="6">Value Set Identifier</td></tr>
@@ -183,7 +183,7 @@ Value Set Definition. This collection of elements is made up of an identifier an
             <td>&nbsp;&nbsp;&nbsp;Name Language (sub-element)</td>
             <td>code to indicate the system of communication used by a particular country or community in which the name is represented.</td>
             <td>This indicates the language system (e.g., US English) in which the name is expressed.</td>
-            <td>The intention is to use the IETF language tags preference referenced by the current RFC for BCP 47 (add reference).</td>
+            <td>The intention is to use the IETF language tags preference referenced by the current RFC for <a href="https://www.rfc-editor.org/info/bcp47">BCP 47</a>.</td>
             <td><a href="https://www.hl7.org/fhir/datatypes.html#string">string</a> (drawn from IETF language tags noted)</td>
             <td>0..1</td>
         </tr>
@@ -231,7 +231,7 @@ Value Set Definition. This collection of elements is made up of an identifier an
             <td>This text is intended to act as a citation to work done elsewhere that is not part of the current stewarding process where the referenced source is in some way
 			a basis of the current Value Set Definition.</td>
             <td>This may refer to other Value Set Definitions, research articles, or other resources. This is not intended to document uses of the Value Set Definition, 
-			for this, see Section 5.2.2.3.7 below. For example, the identifier for a Value Set Definition that was cloned to begin the work on this 
+			for this, see the <a href="#use">Use</a>element below. For example, the identifier for a Value Set Definition that was cloned to begin the work on this 
 			Value Set Definition, or a pointer to a published article that describes appropriate concepts. There may be multiple source references.</td>
             <td><a href="https://www.hl7.org/fhir/datatypes.html#string">string</a></td>
             <td>0..*</td>
@@ -249,13 +249,12 @@ Value Set Definition. This collection of elements is made up of an identifier an
             <td>0..*</td>
         </tr>
         <tr>
-            <td>Use</td>
+            <td><a name="use"/>Use</td>
             <td>the manner in which the Value Set Definition will be employed or applied.</td>
             <td>an optional repeating element used to capture information about consumers of the Value Set Definition and the implementations, projects or standards where the author has utilized the Value Set.</td>
             <td>
                 <p>The information captured in “Use” can and should include names of programs and/or names of organizational entities that use the value set definitions, including standards that 
-				require the value set definition. This is likely to be a “point in</p>
-                <p>time” view and should not be considered an authoritative listing of all uses of the Value Set. In the USA, the Value Set Expansions created for electronic quality measures 
+				require the value set definition. This is likely to be a “point in time” view and should not be considered an authoritative listing of all uses of the Value Set. In the USA, the Value Set Expansions created for electronic quality measures 
 				(eCQMs) that are a part of the Meaningful Use requirements could implement this as follows:</p>
                 <ul>
 					<li>User: Measure Steward name; Usage: Measure Identifier & version/Name</li>
@@ -272,7 +271,7 @@ Value Set Definition. This collection of elements is made up of an identifier an
 
 The Value Set Definition Version section contains the information required to computationally produce a Value Set Expansion from the Value Set Definition, metadata specific to the 
 version and an identifier for the Value Set Definition Version. Similar to the overall Value Set Definition, the Value Set Definition version metadata includes an identifier, elements 
-characterized as definitional, elements characterized as non- definitional (both are described in Implied Constraints) and a derived element. Each of the elements in this section applies 
+characterized as definitional, elements characterized as non- definitional (both are described in <a href="#implied-constraints-of-definitional-and-non-definitional-elements">Implied Constraints</a>) and a derived element. Each of the elements in this section applies 
 to a particular version of a Value Set Definition.
 
 <table class="grid">
@@ -310,14 +309,12 @@ to a particular version of a Value Set Definition.
 				content of the Value Set Expansion, i.e., the Value Set Expansion Code Set.</p>
             </td>
             <td>
-                <p>This element uses the ED data type (REFERENCE ED) meaning that the content is structured and that the structure includes an identification of the 
-				structure (or the application that must be used to interpret the data). For example, an “HL7 Expression” uses a MIME type of “application/xml”. This flexibility means
-				that subsequent specifications can identify the allowance for additional expression syntaxes.</p>
-                <p>The HL7 Expression functions are an available syntax for the CLD that is described below, possibly including some recursive elements. Each recursive section is 
-				considered a “clause”. The Value Set Definition Version contains a single mandatory Content Logical Definition that describes different types of specifications of 
-				content, some of which contain or reference Content Logical Definitions; thus the definition is inherently recursive. The list of functions is described in Section 6.</p>
+                <p>The content for this element is structured and the structure includes an identification of the 
+				structure (or the application that must be used to interpret the data).</p>
+                <p>The Value Set Definition Version contains a single mandatory Content Logical Definition that describes different types of specifications of 
+				content, some of which contain or reference Content Logical Definitions; thus the definition is inherently recursive. The list of CLD elements is described in the <a href="https://www.hl7.org/fhir/cld.html#content-logical-definition--elements">CLD Elements</a> section.</p>
             </td>
-            <td>ED (???)</td>
+            <td><a href="https://www.hl7.org/fhir/cld.html#content-logical-definition--elements">CLD</a></td>
             <td>1..1</td>
         </tr>
     </tbody>
@@ -346,7 +343,7 @@ to a particular version of a Value Set Definition.
 					<li>Inactive: State indicating that the Value Set Definition version is no longer available for use in creating new content. The Activity Status Date associated with this status is known as the “Expiration Date”.</li>
 					<li>Deleted: State intended to be used to remove a Value Set Definition from use and view in a repository and is only possible if the Value Set was never Active (i.e., can only transition from Preliminary).</li>
 				</ul>
-                <p>Note that systems and organizations often need their own custom workflows depending on their use case, so the values given are examples. Since activity status is only represented here in Value Set Definition Version information and is a required element, then any Value Set Definition that does not have this is <i>not valid.</i>Furthermore, 
+                <p>Note that systems and organizations often need their own custom workflows depending on their use case, so the values given are examples. Since activity status is only represented here in Value Set Definition Version information and is a required element, then any Value Set Definition that does not have this is <i>not valid.</i> Furthermore, 
 				a Value Set Definition may have more than one Value Set Definition Version with any of the status states noted. Given that this can lead to overlapping Active definitions, external governance must be available
 				to either restrict the allowed overlap or resolve overlap if usage does not specify a particular Value Set Definition Version.</p>
             </td>
@@ -397,8 +394,8 @@ to a particular version of a Value Set Definition.
 					publish date morning (Eastern Time) and the earliest a Value Set Definition version can be published is the next day’s morning.</li>
 				</ul>
                 <p>VSAC allows all Value Set Definition workflow status descriptions to be changed back to the prior status as long as the Value Set Definition has not been “Published” (Activity Status = ACTIVE).</p>
-                <p>A Value Set Definition version can only have one workflow status description at any time. There may be additional states defined by different developers. This is an optional element because the</p>
-                <p>use of Activity Status “Preliminary” may be sufficient for some implementations. Changes to this element should never result in a new Value Set Definition version.</p>
+                <p>A Value Set Definition version can only have one workflow status description at any time. There may be additional states defined by different developers. This is an optional element because the
+                use of Activity Status “Preliminary” may be sufficient for some implementations. Changes to this element should never result in a new Value Set Definition version.</p>
             </td>
             <td><a href="https://www.hl7.org/fhir/datatypes.html#string">string</a></td>
             <td>0..1</td>
@@ -481,7 +478,7 @@ to a particular version of a Value Set Definition.
 					<li>Intensional: the CLD is an algorithm that, when executed by a machine (or interpreted by a human being), yields a set of concepts.</li>
 				</ul>
             </td>
-            <td><a href="https://www.hl7.org/fhir/datatypes.html#string">string</a><a href="https://www.hl7.org/fhir/datatypes.html#string">string</a></td>
+            <td><a href="https://www.hl7.org/fhir/datatypes.html#string">string</a></td>
             <td>0..1</td>
         </tr>
     </tbody>
@@ -504,8 +501,7 @@ to a particular version of a Value Set Definition.
 				Expansion Code Set </i>if codes specified in the CLD are inactive or if an expression does not identify any codes; therefore, this may list Code Systems that are not 
 				resident in a specific Value Set Expansion Code Set.</p>
             </td>
-            <td>
-                <p><a href="https://www.hl7.org/fhir/datatypes.html#uri">uri</a></p>
+            <td><a href="https://www.hl7.org/fhir/datatypes.html#uri">uri</a>
             </td>
             <td>
                 <p>0..*</p>
