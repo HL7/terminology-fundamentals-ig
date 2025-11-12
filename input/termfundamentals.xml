@@ -96,11 +96,6 @@
         <generation value="markdown"/>
       </page>
 	  <page>
-        <name value="expressionsyntax.html"/>
-        <title value="An HL7 Value Set Definition Expression Syntax"/>
-        <generation value="markdown"/>
-      </page>
-	  <page>
         <name value="vsexpansion.html"/>
         <title value="Value Set Expansion"/>
         <generation value="markdown"/>
