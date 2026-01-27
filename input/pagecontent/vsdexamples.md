@@ -13,8 +13,8 @@ Code Systems, with each CodeBasedContent set unioned together. Both the Chlamydi
 
 ### RoleClass-based Value Sets
 
-The RoleClassAssignedEntity Value Set uses the RoleClass Code System. This example demonstrates two things:
-1.	Both RoleClassAssignedEntity and RoleClassContact use an "intensional" definition style to identifying concepts to be included in the Expansion Code Set wherein a single 
+The <a href="http://terminology.hl7.org/ValueSet/v3-RoleClassAssignedEntity">RoleClassAssignedEntity Value Set</a> uses the <a href="http://terminology.hl7.org/CodeSystem/v3-RoleClass">RoleClass Code System</a>. This example demonstrates two things:
+1.	Both <a href="http://terminology.hl7.org/ValueSet/v3-RoleClassAssignedEntity">RoleClassAssignedEntity</a> and <a href="https://terminology.hl7.org/ValueSet-v3-RoleClassContact.html">RoleClassContact</a> use an "intensional" definition style to identifying concepts to be included in the Expansion Code Set wherein a single 
 code is provided along with a relationship traversal that clarifies that a transitive closure traversal is to be followed to find all codes related to the code provided. This 
 is how "and all descendants" is communicated.
-2.	RoleClassAssignedEntity unions together the "code and all descendants" noted above plus a reference to another value set - RoleClassContact.
+2.	<a href="http://terminology.hl7.org/ValueSet/v3-RoleClassAssignedEntity">RoleClassAssignedEntity</a> unions together the "code and all descendants" noted above plus a reference to another value set - <a href="https://terminology.hl7.org/ValueSet-v3-RoleClassContact.html">RoleClassContact</a>.
