@@ -3,7 +3,7 @@
   <a name="codesystems"> </a>
   <h3>Code Systems</h3>
   <p>
-   A Code System is defined as a  managed collection of  uniquely identifiable concepts with associated representations, designations, associations, and meanings. Examples of Code Systems include ICD-9 CM, SNOMED CT, LOINC, and CPT.
+   A Code System is defined as a  managed collection of  uniquely identifiable concepts with associated representations, designations, associations, and meanings and in some cases relationships, properties, or rules. Examples of Code Systems include ICD-9 CM, SNOMED CT, LOINC, and CPT.
    To meet the requirements of a Code System as defined by HL7, a given concept identifier must resolve to one and only one meaning within the Code System; i.e. Code Systems used in HL7 must be represented by unique identifiers. 
   </p>
   <p>

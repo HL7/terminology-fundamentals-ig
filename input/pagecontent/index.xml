@@ -41,6 +41,12 @@ to learn more about terminology across HL7, but it is not intended to provide im
 	<li><p>human life and well-being depend upon the rapid, correct interpretation of the information.</p></li>
   </ul>
   
+  <a name="conformance-disclaimer"> </a>
+  <h4>Conformance Language Disclaimer</h4>
+  <p>
+    This is an Informative Document that includes conformance language as defined by IETF BCP-14. These conformance terms are non-binding and are in lowercase to reflect this.
+  </p>
+  
   <a name="dependencies"> </a>
   <h4>Dependencies</h4>
   <p>

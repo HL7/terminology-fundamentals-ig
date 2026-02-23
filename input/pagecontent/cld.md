@@ -152,6 +152,7 @@ used to computationally describe how to identify a specific set of Concept Repre
 
 An incomplete list of Other Syntax examples that may be used includes:
 * <a href="https://confluence.ihtsdotools.org/display/DOCECL">SNOMED CT Expression Constraint Language (ECL)</a>
+* <a href="https://build.fhir.org/ig/FHIR/ig-guidance/vcl.html#valueset-compose-language-vcl">ValueSet Compose Language (VCL)</a>
 * <a href="https://www.w3.org/OWL/">Web Ontology Language (OWL)</a>
 * <a href="https://en.wikipedia.org/wiki/SQL">Structured Query Language (SQL)</a>
 * <a href="https://apelon.com/dts-documentation/#dts-tql-doc">Apelon Terminology Query Language (TQL)</a>

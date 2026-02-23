@@ -4,7 +4,7 @@
   <h3>Value Sets</h3>
   <p>
    A Value Set represents a uniquely identifiable set of valid concept identifiers, where any concept identifier in a coded element can be tested to determine whether it is a
-   member of the Value Set at a specific point in time. A concept identifier in a Value Set may be a single concept code or a post-coordinated expression of a combination of codes.
+   member of the Value Set at a specific point in time. A concept identifier in a Value Set may be a single concept code or a post-coordinated expression of a combination of codes. Value Set is a label for both the Value Set Definition and Value Set Expansion, both of which are described extensively on this page.
   </p>
   <p>
     Value Sets exist to constrain the permissible content for a particular use, e.g. for use in analysis, display to a user, etc. For HL7, value sets constrain the permissible 

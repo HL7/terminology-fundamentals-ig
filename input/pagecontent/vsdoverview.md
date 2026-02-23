@@ -9,7 +9,7 @@ described in this guide. Some of the overview material will be important for les
  for use in implemented systems.  
 
 Those individuals looking for the highlights should focus on the Value Set Definition Specification section as this provides the overall structure of a Value Set. 
-They should also review the details presented in the <a href="cld.html">Content Logical Definition</a> section. To understand how a Value Set Definition is not the same as a Value Set Expansion, see the sections <a href="vsexpansion.html">Value Set Expansion</a> and also <a href="valuesetdefinition.html#relationship-between-the-value-set-definition-and-value-set-expansion-code-set.html">Relationship Between the Value Set Definition and Value Set Expansion Code Set</a>.  
+They should also review the details presented in the <a href="cld.html">Content Logical Definition</a> section. To understand how a Value Set Definition is not the same as a Value Set Expansion, see the sections <a href="vsexpansion.html">Value Set Expansion</a> and also <a href="valuesetdefinition.html#relationship-between-the-value-set-definition-and-value-set-expansion-code-set">Relationship Between the Value Set Definition and Value Set Expansion Code Set</a>.  
 
 Those readers particularly interested in understanding the set of functions used to define a Value Set Definition Content Logical Definition should study the work 
 undertaken for an existing standard describing An HL7 Value Set Definition Expression Syntax, published within 

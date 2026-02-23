@@ -11,8 +11,8 @@ When most people think of a Value Set, they think of a list of codes or phrases.
 Value Set, the final set of Code System members used by implementers, which is called the Value Set Expansion in this specification, is only one part of the collective information 
 that _is a Value Set_.  
 
-A Value Set is a specification composed of general metadata that is true for all versions of the Value Set (green items in the <a href="valuesetdefinition#class-model-diagram.html">Class Model Diagram</a> below) and version-specific information that describes the content of the 
-Value Set (yellow items in the <a href="valuesetdefinition#class-model-diagram.html">Class Model Diagram</a> below). Some of the information conveyed in the specification is not intended to be machine computable, but carries information users may interpret. Other elements in the 
+A Value Set is a specification composed of general metadata that is true for all versions of the Value Set (green items in the <a href="#class-model-diagram">Class Model Diagram</a> below) and version-specific information that describes the content of the 
+Value Set (yellow items in the <a href="#class-model-diagram">Class Model Diagram</a> below). Some of the information conveyed in the specification is not intended to be machine computable, but carries information users may interpret. Other elements in the 
 specification are intended to be directly computable so that automated systems may act upon this information and exhibit reliable behavior.  
 
 Also included are critical metadata used to identify the people and entities that are responsible for developing and maintaining the Value Set Definition, Value Set Definition 
@@ -68,9 +68,9 @@ evaluation can result in both the addition and removal of concepts from the Valu
 #### Class Model Diagram
 
 <figure>
-    <img src="{{site.baseurl}}vsdmodel.png"
-         alt="Value Set Metadata">
-    <figcaption><b>Figure 2</b> Value Set Metadata</figcaption>
+  <img src="{{site.baseurl}}vsdclassdiagram.svg"
+         alt="VSD Class Diagram">
+  <figcaption><b>Figure 2</b> Value Set Metadata</figcaption>
 </figure>
 
 ### Elements

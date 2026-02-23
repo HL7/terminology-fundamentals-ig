@@ -37,6 +37,12 @@
 	  <li>
         <a href="terminologyidentifiers.html">Terminology Identifiers</a>
       </li>
+	  <li>
+        <a href="conformance.html">Terminology Conformance</a>
+      </li>
+	  <li>
+        <a href="bindings.html">Terminology Binding</a>
+      </li>
     </ul>
   </li>
   <li class="dropdown">

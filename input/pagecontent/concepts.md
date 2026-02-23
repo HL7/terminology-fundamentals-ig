@@ -11,7 +11,8 @@ manipulation of these units of thought.
 A Concept Representation is defined as a terminology object that enables the manipulation of a Concept in HL7. A Concept Representation exists in some form that is computable, 
 and can be used in HL7 models and specifications. Concept Representations can take on a number of different roles in the structure and processing of terminology in HL7; these roles and functions are described below.  
 
-A Code is defined as a Concept Representation published by the author of a Code System as part of the Code System. It is the preferred unique identifier for 
+A Code is defined as a Concept Representation published by the author of a Code System as part of the Code System, and is comprised of a series of letters, numbers or symbols assigned to one concept in a Code System 
+for the purposes of classifcation or identification. It is the preferred unique identifier for 
 that concept in that Code System for the purpose of communication (preferred wire-format identifier), and is used in the 'code' property of an HL7 coded data type. 
 Codes are sometimes meaningless identifiers, and sometimes they are mnemonics that imply the represented concept to a human reader. In Code Systems that contain more 
 than one Concept Identifier, the one that should be used in HL7 as the Code should be explicitly declared.  
