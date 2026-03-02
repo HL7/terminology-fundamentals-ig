@@ -1,17 +1,20 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir">
-   <id value="hl7.fhir.uv.termfundamentals"/>
+   <id value="hl7.xprod.uv.termfundamentals"/>
+   <language value="en"/>
    <text>
       <status value="generated"/>
-      <div xmlns="http://www.w3.org/1999/xhtml">
+      <div xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
          <p class="res-header-id">
-            <b>Generated Narrative: ImplementationGuide hl7.fhir.uv.termfundamentals</b>
+            <b>Generated Narrative: ImplementationGuide hl7.xprod.uv.termfundamentals</b>
          </p>
-         <a name="hl7.fhir.uv.termfundamentals"> </a>
-         <a name="hchl7.fhir.uv.termfundamentals"> </a>
-         <a name="hl7.fhir.uv.termfundamentals-en-US"> </a>
+         <a name="hl7.xprod.uv.termfundamentals"> </a>
+         <a name="hchl7.xprod.uv.termfundamentals"> </a>
+         <div style="display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%">
+            <p style="margin-bottom: 0px">Language: en</p>
+         </div>
          <h2>TerminologyFundamentals</h2>
          <p>The official URL for this implementation guide is: </p>
-         <pre>http://hl7.org/fhir/uv/termfundamentals/ImplementationGuide/hl7.fhir.uv.termfundamentals</pre>
+         <pre>http://hl7.org/xprod/uv/termfundamentals/ImplementationGuide/hl7.xprod.uv.termfundamentals</pre>
          <div>
             <p>The Terminology Fundamentals IG is an informative cross-paradigm IG that incorporates the basic principles of terminology that are used and described across HL7 published standards. The IG is designed to be a valuable educational resource for those seeking to enhance their understanding of terminology within the realm of HL7.</p>
          </div>
@@ -26,13 +29,13 @@
    <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
       <valueCode value="vocab"/>
    </extension>
-   <url value="http://hl7.org/fhir/uv/termfundamentals/ImplementationGuide/hl7.fhir.uv.termfundamentals"/>
+   <url value="http://hl7.org/xprod/uv/termfundamentals/ImplementationGuide/hl7.xprod.uv.termfundamentals"/>
    <version value="0.1.0"/>
    <name value="TerminologyFundamentals"/>
    <title value="Terminology Fundamentals"/>
    <status value="draft"/>
    <experimental value="false"/>
-   <date value="2024-09-03T13:38:20-04:00"/>
+   <date value="2026-03-02T16:41:27-07:00"/>
    <publisher value="HL7 International / Terminology Infrastructure"/>
    <contact>
       <telecom>
@@ -47,7 +50,7 @@
          <code value="001"/>
       </coding>
    </jurisdiction>
-   <packageId value="hl7.fhir.uv.termfundamentals"/>
+   <packageId value="hl7.xprod.uv.termfundamentals"/>
    <license value="CC0-1.0"/>
    <fhirVersion value="5.0.0"/>
    <dependsOn id="hl7tx">
@@ -56,7 +59,7 @@
       </extension>
       <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
       <packageId value="hl7.terminology.r5"/>
-      <version value="6.0.2"/>
+      <version value="7.0.1"/>
    </dependsOn>
    <dependsOn id="hl7ext">
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment">
@@ -64,83 +67,12 @@
       </extension>
       <uri value="http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions"/>
       <packageId value="hl7.fhir.uv.extensions.r5"/>
-      <version value="5.1.0"/>
+      <version value="5.2.0"/>
    </dependsOn>
    <definition>
       <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency">
-         <valueCode value="hl7.fhir.uv.tools#0.1.0"/>
+         <valueCode value="hl7.fhir.uv.tools.r5#0.9.0"/>
       </extension>
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
       <page>
          <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
             <valueCode value="informative"/>
@@ -197,6 +129,16 @@
                <valueCode value="informative"/>
             </extension>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="valuesets.html"/>
+            </extension>
+            <title value="Value Sets"/>
+            <generation value="html"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+               <valueCode value="informative"/>
+            </extension>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
                <valueUrl value="identifiersystems.html"/>
             </extension>
             <title value="Identifier Systems"/>
@@ -227,19 +169,29 @@
                <valueCode value="informative"/>
             </extension>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-               <valueUrl value="valuesets.html"/>
+               <valueUrl value="terminologyidentifiers.html"/>
             </extension>
-            <title value="Value Sets"/>
-            <generation value="html"/>
+            <title value="Identification of Terminology Artifacts"/>
+            <generation value="markdown"/>
          </page>
          <page>
             <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
                <valueCode value="informative"/>
             </extension>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-               <valueUrl value="valuesetdefinition.html"/>
+               <valueUrl value="conformance.html"/>
             </extension>
-            <title value="Value Set Definition Specification"/>
+            <title value="Terminology Conformance"/>
+            <generation value="markdown"/>
+         </page>
+         <page>
+            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+               <valueCode value="informative"/>
+            </extension>
+            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
+               <valueUrl value="bindings.html"/>
+            </extension>
+            <title value="Terminology Binding"/>
             <generation value="markdown"/>
          </page>
          <page>
@@ -257,9 +209,9 @@
                <valueCode value="informative"/>
             </extension>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-               <valueUrl value="cld.html"/>
+               <valueUrl value="valuesetdefinition.html"/>
             </extension>
-            <title value="Content Logical Definition"/>
+            <title value="Value Set Definition Specification"/>
             <generation value="markdown"/>
          </page>
          <page>
@@ -267,9 +219,9 @@
                <valueCode value="informative"/>
             </extension>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-               <valueUrl value="expressionsyntax.html"/>
+               <valueUrl value="cld.html"/>
             </extension>
-            <title value="An HL7 Value Set Definition Expression Syntax"/>
+            <title value="Content Logical Definition"/>
             <generation value="markdown"/>
          </page>
          <page>
@@ -317,16 +269,6 @@
                <valueCode value="informative"/>
             </extension>
             <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
-               <valueUrl value="terminologyidentifiers.html"/>
-            </extension>
-            <title value="Identification of Terminology Artifacts"/>
-            <generation value="markdown"/>
-         </page>
-         <page>
-            <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-               <valueCode value="informative"/>
-            </extension>
-            <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-page-name">
                <valueUrl value="downloads.html"/>
             </extension>
             <nameUrl value="downloads.html"/>
@@ -335,13 +277,22 @@
          </page>
          <page>
             <nameUrl value="artifacts.html"/>
-            <title value="Artifacts Summary"/>
+            <title value="Artifacts Summary">
+               <extension url="http://hl7.org/fhir/StructureDefinition/translation">
+                  <extension url="lang">
+                     <valueCode value="en"/>
+                  </extension>
+                  <extension url="content">
+                     <valueString value="Artifacts Summary"/>
+                  </extension>
+               </extension>
+            </title>
             <generation value="html"/>
          </page>
       </page>
       <parameter>
          <code value="copyrightyear"/>
-         <value value="2024+"/>
+         <value value="2026+"/>
       </parameter>
       <parameter>
          <code value="releaselabel"/>
@@ -350,10 +301,6 @@
       <parameter>
          <code value="globals-in-artifacts"/>
          <value value="true"/>
-      </parameter>
-      <parameter>
-         <code value="viewDefinition"/>
-         <value value="sql/sql-view-valueset.json"/>
       </parameter>
       <parameter>
          <code value="autoload-resources"/>
@@ -413,6 +360,10 @@
       </parameter>
       <parameter>
          <code value="path-pages"/>
+         <value value="input/assets"/>
+      </parameter>
+      <parameter>
+         <code value="path-pages"/>
          <value value="input/images"/>
       </parameter>
       <parameter>
@@ -445,7 +396,7 @@
       </parameter>
       <parameter>
          <code value="path-history"/>
-         <value value="http://hl7.org/fhir/uv/termfundamentals/history.html"/>
+         <value value="http://hl7.org/xprod/uv/termfundamentals/history.html"/>
       </parameter>
       <parameter>
          <code value="template-html"/>
@@ -506,6 +457,10 @@
       <parameter>
          <code value="tabbed-snapshots"/>
          <value value="true"/>
+      </parameter>
+      <parameter>
+         <code value="i18n-default-lang"/>
+         <value value="en"/>
       </parameter>
    </definition>
 </ImplementationGuide>

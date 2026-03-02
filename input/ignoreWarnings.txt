@@ -1,6 +1,13 @@
 == Suppressed Messages ==
-# Add warning and/or information messages here after you've confirmed that they aren't really a problem
-# (And include comments like this justifying why)
 
-# This value set should never have been deprecated
+# This value set should never have been deprecated but is from outside the IG and used by the publisher
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+
+# This value set should not be experimental but is from outside the IG and used by the publisher
+Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
+
+# The publisher says to change href="#" to href="menu.html" and then throws these broken links
+The link 'menu.html' for "Background" cannot be resolved
+The link 'menu.html' for "Terminology Artifacts" cannot be resolved
+The link 'menu.html' for "Characteristics of a Value Set Definition" cannot be resolved
+The link 'menu.html' for "Support" cannot be resolved
