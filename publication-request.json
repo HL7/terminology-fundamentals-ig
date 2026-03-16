@@ -1,7 +1,7 @@
 {
   "package-id" : "hl7.xprod.uv.termfundamentals",
   "version" : "1.0.0-ballot",
-  "path" : "http://hl7.org/xprod/uv/termfundamentals/2025Jan",
+  "path" : "http://hl7.org/xprod/uv/termfundamentals/2026May",
   "mode" : "working",
   "status" : "ballot",
   "sequence" : "STU 1",
