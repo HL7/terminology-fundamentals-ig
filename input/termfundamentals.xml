@@ -11,7 +11,7 @@
     <valueCode value="vocab"/>
   </extension>
   <url value="http://hl7.org/xprod/uv/termfundamentals/ImplementationGuide/hl7.xprod.uv.termfundamentals"/>
-  <version value="0.1.0"/>
+  <version value="1.0.0-ballot"/>
   <name value="TerminologyFundamentals"/>
   <title value="Terminology Fundamentals"/>
   <status value="draft"/>
@@ -149,7 +149,7 @@
         <system value="http://hl7.org/fhir/tools/CodeSystem/ig-parameters"/>
         <code value="releaselabel"/>
       </code>
-      <value value="CI Build"/>
+      <value value="Informative 1 Ballot"/>
     </parameter>
 	<parameter>
 	  <code>
