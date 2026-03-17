@@ -2,7 +2,7 @@
   <li><a href="index.html">IG Home</a></li>
   <li><a href="toc.html">Table of Contents</a></li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="menu.html" class="dropdown-toggle">Background<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Background<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -12,7 +12,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="menu.html" class="dropdown-toggle">Terminology Artifacts<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology Artifacts<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -46,7 +46,7 @@
     </ul>
   </li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="menu.html" class="dropdown-toggle">Characteristics of a Value Set Definition<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Characteristics of a Value Set Definition<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -75,7 +75,7 @@
   </li>
   <li><a href="artifacts.html">Artifact Index</a></li>
   <li class="dropdown">
-    <a data-toggle="dropdown" href="menu.html" class="dropdown-toggle">Support<b class="caret">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Support<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">

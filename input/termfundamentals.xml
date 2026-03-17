@@ -2,10 +2,10 @@
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/r5/fhir-single.xsd">
   <id value="hl7.xprod.uv.termfundamentals"/>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-    <valueCode value="draft"/> 
+    <valueCode value="informative"/> 
   </extension> 
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
-    <valueInteger value="0"/> 
+    <valueInteger value="1"/> 
   </extension>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-wg">
     <valueCode value="vocab"/>
@@ -14,7 +14,7 @@
   <version value="1.0.0-ballot"/>
   <name value="TerminologyFundamentals"/>
   <title value="Terminology Fundamentals"/>
-  <status value="draft"/>
+  <status value="active"/>
   <experimental value="false"/>
   <publisher value="HL7 International / Terminology Infrastructure"/>
   <contact>
