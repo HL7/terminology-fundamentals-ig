@@ -5,6 +5,3 @@ Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 
 # This value set should not be experimental but is from outside the IG and used by the publisher
 Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
-
-# The publisher says to change href="#" to href="menu.html" but doing that causes broken link errors
-In your menu.xml file, it's no longer allowed to have href='#' on dropdown items. Change them to be href='menu.html' instead. (It won't link, but it needs to be something valid.)
