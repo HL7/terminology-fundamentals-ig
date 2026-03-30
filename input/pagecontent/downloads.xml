@@ -1,5 +1,24 @@
-<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas-r5/fhir-single.xsd">
-	<p>
-    To do
-  </p>
+<div xmlns="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../input-cache/schemas/R5/fhir-single.xsd">
+
+ <a name="full-ig"> </a><h3>Full Content</h3>
+ <p>A downloadable copy of this IG is available so it can be hosted locally.</p>
+ <ul>
+   <li><a href="full-ig.zip">Downloadable Copy (compressed folder)</a></li>
+ </ul> 
+
+<a name="cross-version"> </a><h3>Cross Version Analysis</h3>
+
+{% include cross-version-analysis.xhtml %} 
+
+<a name="dependency"> </a><h3>Dependency Table</h3>
+
+{% include dependency-table-short.xhtml %} 
+
+<a name="globals"> </a><h3>Globals Table</h3> 
+
+{% include globals-table.xhtml %} 
+
+<a name="ip-statements"> </a><h3>IP Statements </h3>
+
+{% include ip-statements.xhtml %} 
 </div>
