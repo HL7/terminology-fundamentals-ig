@@ -1,4 +1,4 @@
-Value Sets represent the terminology constraint for a data element in a model for a particular use case and, thus, strongly influence the semantics that may be carried in the model. 
+Value Sets represent the terminology constraint for a data element in a model for a particular use case and, thus, strongly influence the semantics that may be carried in a model. 
 As such, they are usually authored and published using well-controlled processes to ensure quality and consistency. In order for such quality oversight and robust governance 
 operations to be implemented efficiently, a well-designed standard for the content and structure for Value Sets is highly desirable. This standard supplies such a definition 
 and many of the elements described in the next sections are specifically included to support robust governance processes.

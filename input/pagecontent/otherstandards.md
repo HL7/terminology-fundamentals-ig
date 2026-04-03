@@ -1,7 +1,7 @@
 
 The following material describes the relationship of the Value Set Definition Standard to other HL7 standards.
 
-### Version 3
+### HL7 Version 3 (V3)
 
 The V3 HL7-defined Value Sets were previously specified in the HL7 Vocabulary section of the <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=454">HL7 
 V3 Normative Edition (Foundation Chapter)</a>. The HL7-defined Value Sets published in the HL7 V3 Normative Edition were migrated to the <a href="https://terminology.hl7.org/">HL7 Terminology (THO)</a> in 2020. 
@@ -32,16 +32,39 @@ below).
 The R2 CD valueSet property is a UID (UniqueIdentifierString), which is intended to identify an object “in a globally unique and timeless manner”, and may be 
 populated with either an OID (Object Identifier) or UUID (Universally Unique Identifier). This should always be populated with the Value Set Identifier.  
 
-The R2 Data Types specification also requires that the version of the Value Set SHALL also be provided. The valueSetVersion property is a string (ST.SIMPLE), 
+The R2 Data Types specification also requires that the version of the Value Set also be provided. The valueSetVersion property is a string (ST.SIMPLE), 
 and its value “must properly identify a particular version of the Value Set following the rules defined by the Value Set or its publisher.” For HL7 defined 
-Value Sets, the version SHALL be the date/time that the Value Set Definition was published in a ballot. This date will match the expectation that the 
+Value Sets, the version shall be the date/time that the Value Set Definition was published in a ballot. This date will match the expectation that the 
 valueSetVersion property be populated with the Value Set Expansion: from the Value Set Expansion Code Set used to populate the code component of the CD.
 
-### Version 2
+### HL7 Version 2 (V2)
 
-[AWAITING TEXT FROM V2MG]
+HL7 Version 2 (V2) manages terminology through Tables, which are bound to specific data elements. The relationship between V2 and the Value Set Definition (VSD) standard is defined by the current table-based model and the evolving V2+ framework.
 
-### Model Interchange Format
+#### Current Table-Based Model (V2.x)
+
+In current versions of the standard (up to v2.9.1), terminology is published as tables within the standard's narrative. These tables serve as the normative source of truth for conformance. V2 historically conflates the concepts of Code System and Value Set, as tables serve dual roles without a clean separation between the two. Additionally, some tables—particularly User-Defined tables—do not represent implementable terminology at all and instead function as concept domains.
+
+The standard defines several table types based on content ownership and maintenance, which align with the VSD concepts of Stewardship and Scope:
+
+* HL7-Defined: Values are published by HL7 and are universally applicable. While the values themselves may not be redefined, the tables are often extensible to allow for local additions.
+* User-Defined: Values are locally or site-defined to accommodate institutional variations (e.g., patient locations). HL7 may provide suggested values as a starter set, but the governance of the final expansion rests with the implementer. Some User-Defined tables function as concept domains, containing either no codes or only illustrative examples that are not intended for direct implementation.
+* HL7-External (HL7-EXT): Content is maintained by HL7 but hosted outside the V2 maintenance space (e.g., in V3 or FHIR repositories).
+* External, Referenced, and Imported: These tables represent content from external standards organizations (e.g., ISO, LOINC, UCUM).
+
+Most V2 tables are extensional (explicit lists). Intensional logic is found in Referenced or External tables, where the definition is a pointer to an external authority (e.g., "All valid codes from ISO 3166") rather than a static list within the V2 publication.
+
+Terminology constraints are enforced via data types. CNE (Coded with No Exceptions) implies a Required binding to a specific value set, while CWE (Coded with Exceptions) allows for local extensions or text, aligning with Extensible binding principles. When V2 profiles or implementation guides constrain table values for specific use cases, the resulting artifacts more closely resemble formal Value Sets as defined by this Implementation Guide.
+
+#### V2+: The Evolution to Computable Terminology
+
+V2+ represents a transition in the authoring and publication of the standard, moving from narrative documents to a computable, web-based format. While the resulting web publications are versioned and static, the underlying terminology is managed as discrete, computable artifacts.
+
+* Formal Value Set Recognition: V2+ moves toward formal recognition of terminology as Value Sets, allowing for clearer separation between the data element (the field) and the terminology constraint (the Value Set) applied to it.
+* Source of Truth: For V2+, the source of truth is transitioning to formal FHIR-based artifacts, including Value Sets maintained in HL7 Terminology (THO) and V2-specific artifacts maintained in the V2+ publication repository.
+* Alignment of Binding Strengths: V2+ provides an opportunity to harmonize legacy table-type distinctions with formal binding strengths (Required, Extensible, etc.) and coding strength principles defined in this Implementation Guide and other modern HL7 standards.
+
+### HL7 V3 Model Interchange Format (MIF)
 
 HL7’s V3 Model Interchange Format (MIF) originally defined most (though not all) of the content formal Value Set structure described in Characteristics of a Value Set Defition, including 
 the formal definition, support for partitions, Code System Supplements, control over post-coordination, etc. As such, MIF is a conformant implementation of this guide.  
@@ -54,7 +77,7 @@ Because MIF is used specifically for HL7 use-cases, there are some constraints o
 * No support for version identifiers other than dates or date-time values
 * No support for multiple Value Set Expansion Code Sets, maintaining Value Set Expansion Code Sets or the level of detail supported in this specification for Value Set Expansion Code Sets.
 
-### CDA
+### HL7 Clinical Document Architecture (CDA)
 
 Clinical Document Architecture Release 2 (CDA R2) is one of the HL7 V3 family standards; however, CDA R2 uses Release 1 of the Data Types –Abstract specification, 
 which does not include explicit references to Value Sets and versions in the CD (Concept Descriptor) or other coded data types. In particular for implementation guides 
@@ -66,7 +89,7 @@ The CDA R2 base Standard includes the specification of a large number of Value S
 are enumerations (extensional definitions), but some are defined by rather simple intensional rules – an example is “Table 31: Value set for RelatedEntity.classCode (CNE)”, 
 which is defined as “all subtype of RoleClassMutualRelationship”.
 
-### Fast Health Interoperable Resources
+### HL7 Fast Health Interoperable Resources (FHIR)
 
 Fast Health Interoperable Resources (FHIR) is the newest HL7 specification for data exchange. It includes a specific <a href="https://build.fhir.org/valueset.html">ValueSet resource</a> 
 that corresponds with much of the content found here. The ValueSet resource is a first-order structure like any other resource and can be conveyed in instances along with clinical 
@@ -82,9 +105,9 @@ FHIR’s ValueSet goes beyond the capabilities documented here, in that ValueSet
 convenience as frequently Code Systems and Value Sets are created on a 1..1 basis for things like answers to questions in questionnaires, for structural codes 
 and other purposes. This behavior falls outside of the scope of this document as formally, Value Set Definitions do not include the definition of Code Systems, Code System Supplements, etc.
 
-### Common Terminology Services 2
+### Common Terminology Services 2 (CTS 2)
 
-The <a href="https://www.omg.org/cgi-bin/doc?formal/15-04-09.pdf">Common Terminology Services – Release 2 (CTS 2) specification</a>30 is intended to mediate among disparate 
+The <a href="https://www.omg.org/cgi-bin/doc?formal/15-04-09.pdf">Common Terminology Services – Release 2 (CTS 2) specification</a> is intended to mediate among disparate 
 terminology sources by defining a common information model and 
 computational model. The information model specified in the CTS 2 Platform Independent Model (PIM) outlines the structural definition, attributes and associations of the 
 elements common across structured terminologies and terminology elements such as Value Sets. CTS 2 does not mandate specific terminology components, but provides the 

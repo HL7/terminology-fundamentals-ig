@@ -26,19 +26,18 @@ to learn more about terminology across HL7, but it is not intended to provide im
   <a name="rationale"> </a>
   <h3>The Rationale - Semantic interoperability</h3>
   <p>
-    In HL7's view, interoperability requires that the systems be able to "exchange" information reliably and securely ("functional interoperability") and be
-	able to correctly and consistently interpret the information being exchanged ("semantic interoperability"). Terminology plays a huge role in enabling semantic interoperability.
+    In HL7's view, interoperability requires that the systems be able to <i>exchange</i> information reliably and securely (<i>functional interoperability</i>) and be
+	able to correctly and consistently interpret the information being exchanged (<i>semantic interoperability</i>). Terminology plays a huge role in enabling semantic interoperability.
   </p>
   <p>
-    In the 21st Century, "functional interoperability" is increasingly easy to accomplish with the availability of carefully integrated computational 
-	and communication environments in which to implement. "Semantic Interoperability," however, poses major challenges, particularly for the enterprise of health care in which:
+    <i>Functional interoperability</i> has been addressed through the evolution of interoperability standards and updated implementation environments. <i>Semantic Interoperability</i>, however, poses major challenges, particularly for the enterprise of health care where:
   </p>
   <ul>
-	<li><p>the intellectual space continues to expand so rapidly that most individuals cannot keep pace;</p></li>
-	<li><p>the interpretation of any given data element is inexorably linked to the context in which that element was discovered, and the whole of the other data about the same subject;</p></li>
-	<li><p>the data content requires precise, and frequently extensive scientific representation;</p></li>
-	<li><p>a large, fraction of the data encoded in rich terminologies that are both vast, and continually expanding; and</p></li>
-	<li><p>human life and well-being depend upon the rapid, correct interpretation of the information.</p></li>
+	<li><p>The intellectual space continues to expand so rapidly that most individuals cannot keep pace;</p></li>
+	<li><p>The interpretation of any given data element often depends on its context and other related information;</p></li>
+	<li><p>The data content requires precise, and frequently extensive scientific representation;</p></li>
+	<li><p>Much of the data is encoded using large and constantly evolving clinical terminologies; and</p></li>
+	<li><p>Human life and well-being depend upon the rapid, correct interpretation of the information.</p></li>
   </ul>
   
   <a name="conformance-disclaimer"> </a>

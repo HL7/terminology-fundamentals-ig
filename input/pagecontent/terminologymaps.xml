@@ -3,7 +3,7 @@
   <a name="terminologymaps"> </a>
   <h3>Terminology Maps</h3>
   <p>
-   ISO/TR 12300:2014 [14] defines terminology mapping as the "process of defining a relationship between concepts in one coding system to concepts in another coding system, following a documented rationale, for a given purpose." 
+   In the <a href="https://cdn.who.int/media/docs/default-source/classification/who-fic-network/whofic_terminology_mapping_guide.pdf">WHO-FIC Classifications and Terminology Mapping Guide</a>, ISO/TR 12300:2014 defines terminology mapping as the "process of defining a relationship between concepts in one coding system to concepts in another coding system, following a documented rationale, for a given purpose." 
   </p>
   <p>
     The output of terminology mapping is a Terminology Map. This can be realized using multiple formats, including the FHIR ConceptMap resource. 
@@ -19,12 +19,7 @@
    A single Concept from a source Code System may be mapped to one or more Concepts from the target Code System. 
   </p>
   <p>
-    While perfect semantic alignment between Concepts is ideal, it is often not achievable. Specific use cases may support mappings between concepts that are sufficiently similar. If possible, 
-	the relationship or level of equivalence between the source and target concepts, should be defined for each mapping. Common mapping relationships include equivalent 
-	(the definitions of the concepts mean the same thing), broader (target concept is broader in meaning than the source concept) and narrower (target concept is narrower in meaning than the source concept).
-  </p>
-  <p>
-   Resources: https://cdn.who.int/media/docs/default-source/classification/who-fic-network/whofic_terminology_mapping_guide.pdf 
+    While perfect semantic alignment between Concepts is ideal, it is often not achievable. Specific use cases may support mappings between concepts that are sufficiently similar. A terminology map must define the relationship between the source and target concepts for each mapping. Common mapping relationships include equivalent (the definitions of the concepts mean the same thing), broader (source concept is broader in meaning than the target concept) and narrower (source concept is narrower in meaning than the target concept).
   </p>
 
 </div>

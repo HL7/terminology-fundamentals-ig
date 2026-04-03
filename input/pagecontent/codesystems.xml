@@ -3,11 +3,11 @@
   <a name="codesystems"> </a>
   <h3>Code Systems</h3>
   <p>
-   A Code System is defined as a  managed collection of  uniquely identifiable concepts with associated representations, designations, associations, and meanings and in some cases relationships, properties, or rules. Examples of Code Systems include ICD-9 CM, SNOMED CT, LOINC, and CPT.
-   To meet the requirements of a Code System as defined by HL7, a given concept identifier must resolve to one and only one meaning within the Code System; i.e. Code Systems used in HL7 must be represented by unique identifiers. 
+   A Code System is defined as a  managed collection of  uniquely identifiable concepts with associated representations, designations, associations, and meanings and in some cases relationships, properties, or rules. Examples of Code Systems include ICD-10, SNOMED CT, LOINC, and CPT.
+   To meet the requirements of a Code System as defined by HL7, a given Concept Code must resolve to one and only one meaning within the Code System; i.e. Code Systems used in HL7 must be represented by unique identifiers. 
   </p>
   <p>
-    Although Code Systems may be differentially referred to as terminologies, vocabularies, or coding schemes, HL7 considers all such collections ‘Code Systems' . At a minimum, Code Systems have the following attributes:
+    Although Code Systems may be differentially referred to as terminologies, vocabularies, or coding schemes, HL7 considers all such collections ‘Code Systems'. At a minimum, Code Systems must have the following attributes:
   </p>
   <ul>
     <li>An identifier that uniquely identifies the Code System. This SHALL be in the form of a Universal ID (UID). The UID is most commonly represented by the following forms: an ISO OID, or a URI. The HL7 OID Registry may be found at <a href="http://www.hl7.org/oid/index.cfm">http://www.hl7.org/oid/index.cfm</a></li>
@@ -20,7 +20,7 @@
   </p>
   <p>
   A Code System is typically created for a particular purpose and may include finite collections, such as concepts that represent individual countries, colors, or states. Code Systems may also 
-  represent broad and complex collections of concepts, e.g., SNOMED-CT, ICD, LOINC, and CPT. Where possible, HL7 modelers faced with a requirement for a coded concept will reference an existing
+  represent broad and hierarchically structured collections of concepts, e.g., SNOMED-CT, ICD, LOINC, and CPT. Where possible, HL7 modelers faced with a requirement for a coded concept will reference an existing
   Code System. Some of these Code Systems are replicated within official HL7 publications for stability or convenience, while others are documented as references. HL7 will only create a new Code 
   System when no appropriate Code System exists, or when an existing Code System is not available for use in HL7. 
   </p>
@@ -28,40 +28,41 @@
   <a name="post-coordination"> </a>
   <h4 id="post-coordination">Post-Coordination in Code Systems</h4>
   <p>
-    Code Systems may provide a capability for the composition of complex concepts consisting of two or more existing concepts and formal relationships between them, using a defined syntax. 
-	A complex concept which has been assigned a unique concept identifier or code and is published in the Code System is referred to as "pre-coordinated". A representation of a complex concept 
-	that is created externally to the Code System (i.e., by an outside entity or user) is called a post-coordinated expression. Note also that it is possible (although discouraged) for a post-coordinated 
-	expression to be constructed that represents a concept which already exists and is published in the Code System. Some commonly used code systems in health care IT, such as SNOMED-CT and UCUM,
+    Code Systems may allow the construction of composite concepts formed from two or more existing concepts with formal relationships, using a defined syntax. A representation of a composite concept is called a post-coordinated expression. 
+	A complex concept (a concept that represents a combination of multiple ideas - such as "severe headache") which has been assigned a unique concept identifier or concept code and is published in the Code System is referred to as "pre-coordinated".  
+  </p>
+  <p>
+	Note also that it is possible (although discouraged) for a post-coordinated 
+	expression to be constructed that represents a concept which already exists and is published in the Code System. Some commonly used code systems in health care IT, such as SNOMED CT and UCUM,
 	provide a formal mechanism for post-coordination. The mechanism (syntax) that permits this construction of new concept representations is referred to as a grammar for post-coordination.
   </p>
   <p>
-    A simple example to illustrate post-coordination is a case where there exists a concept code for the anatomical object 'arm', a concept code for the laterality identifier 'left', and a code used in
-	post coordinated expressions for 'has laterality'. Although the code system may not have any code for 'left arm', it can be represented in the code system with the three codes, e.g. 'arm' - 'has laterality'
-	- 'left'. HL7 permits the use of such expressions in the coded data types for representation in model instances. Another example is the concept "excision of pituitary gland" which may be pre-coordinated in
-	the code system with a unique identifier and a designation of "hypophysectomy". An alternative definition for this concept can be obtained by post-coordinating codes for "brain excision" and "pituitary gland,
-	" without adding a reusable designation to the source system. Post-coordination allows us to derive complex composite terms by combining the concepts they are derived from, which reduces the number of concepts
-	in the source system. Post-coordination requires the explicit resolution of complex questions of context and semantic precedence (e.g., the preposition "of" in this example).
+    A simple example to illustrate post-coordination is a case where there exists a concept code for the anatomical object <i>arm</i>, a concept code for the laterality identifier <i>left</i>, and a concept code used in
+	post coordinated expressions for <i>has laterality</i>. Although the code system may not have any concept code for <i>left arm</i>, it can be represented in the code system with the three concept codes, e.g. <i>arm</i> - 
+	<i>has laterality</i> - <i>left</i>. HL7 permits the use of such expressions in the coded data types for representation in model instances. Another example is the concept "excision of pituitary gland" which may be pre-coordinated in
+	the code system with a unique identifier and a designation of "hypophysectomy". An alternative definition for this concept can be obtained by post-coordinating codes for "brain excision" and "pituitary gland", 
+	without adding a reusable designation to the source system. Post-coordination allows us to derive complex composite terms by combining the concepts they are derived from, which reduces the number of concepts
+	in the source code system. Post-coordination requires the explicit resolution of complex questions of context and semantic precedence (e.g., the preposition "of" in this example).
   </p>
   <a name="codesystem-versions"> </a>
   <h4 id="codesystem-versions">Code System Versions</h4>
   <p>
-    Code Systems evolve over time. Changes occur because of corrections and clarifications, because the understanding of the entities being modeled evolves (e.g., new genes and proteins are discovered), 
-	because the entities being modeled change (e.g., new countries emerge; old countries are absorbed), or because the assessment of the relevance of particular entities within the knowledge resource change 
-	(e.g., the addition of new parent-child relationships to existing codes in SNOMED-CT). Depending upon how well the Code System adheres to good vocabulary practices, the changes in meaning could be significant.
+    Code Systems evolve over time. Changes occur because of corrections and clarifications, because the understanding of the concepts being modeled evolves (e.g., new genes and proteins are discovered), 
+	because the concepts being modeled change (e.g., new countries emerge; old countries are absorbed), or because the assessment of the relevance of particular concepts within the knowledge resource change 
+	(e.g., the addition of new parent-child relationships to existing codes in SNOMED-CT). Depending upon how well the Code System adheres to good terminology practices, the changes in meaning could be significant.
 	Therefore it can be important to know which version of a given Code System was used in the creation of HL7 model instances, the recording of coded data, or in some cases the creation of the HL7 models.
   </p>
   <p>
-    The HL7 model depends on the meaning of a specific concept identifier remaining constant over time, independent of the particular version of the knowledge resource. In the general case where codes do not change
-	meaning over time (or where the meaning change is sufficiently subtle that any such meaning changes are deemed by the user as immaterial for the purpose for which the code is being carried), the version of the 
-	Code System is not required to be noted with the Code and the Code System. In cases where the knowledge resource itself doesn't enforce this (e.g. older versions of ICD-9-CM, where codes were retired and subsequently
-	re-used to represent something different), then the version of the Code System in which the code is associated with the desired meaning must be included in the HL7 data type carrying the instance of the Code. Some code
+    Using terminology in HL7 specifications depends on the meaning of a specific concept code remaining constant over time, independent of the particular version of the knowledge resource. In the general case where codes do not change meaning over time (or where the meaning change is deemed to be insignificant), the version of the 
+	Code System is not required to be noted with the Concept Code and the Code System. In cases where the Code System doesn't enforce this (e.g. older versions of ICD-9-CM, where concept codes were retired and subsequently
+	re-used to represent something different), then the Code System version must be exchanged in the HL7 data type carrying the instance of the Concept Code. Some code
 	systems have changes that are significant over time, and for these a new code system has been designated rather than a new version of the same code system. This is the case, for example, with the German diagnostic 
 	classification codes: ICD10GM2009 is NOT a new version of ICD10GM2008, but a completely new code system, with its own independent versioning.
   </p>
   <p>
     Code Systems employ a variety of mechanisms to signify a particular version; these are defined by the author and/or distributor of the Code System. Most use a number, or set of numbers, others may use alphanumeric 
-	strings or dates. There exists no standard representation of version identifiers that has been adopted by authors of Code Systems. Any version identifier that can be represented in an HL7 string data type can be used 
-	in HL7. When a code system is registered in THO or the HL7 OID Registry so that conformance may be tested and/or measured, the registration should include precise and detailed information on how code system versions 
+	strings or dates. Any version identifier that can be represented in an HL7 string data type can be used 
+	in HL7. When a code system is registered in the <a href="https://terminology.hl7.org/">HL7 Terminology</a> or the <a href="https://www.hl7.org/oid/">HL7 OID Registry</a> so that conformance may be tested and/or measured, the registration should include precise and detailed information on how code system versions 
 	are defined and identified. The registration information should be explicit enough to ensure that independent applications recording the code system version used to capture a particular data element will be recognized 
 	by other applications with whom they exchange information. Considerations include factors like use of upper-case vs. lower-case characters, the presence and types of separators, use of leading characters,
 	order of components, and potentially even character set. For example "02.5" would not match with "2-5"; "2001/03/05" would not match with "05-03-2001", etc. The registration should indicate enough information 
@@ -70,12 +71,12 @@
   <a name="codesystem-partitions"> </a>
   <h4 id="codesystem-partitions">Code System Partitions and Supplements</h4>
   <p>
-  Code System Partitions are a unique and identifiable distinct segment of an overall Code System namespace. While most Code Systems are in essence one partition and, therefore, do not have 
-identifiable partitions, some Code Systems can be made up of a collection of distinct segments. SNOMED CT is a prototypical example of such a Code System. The SNOMED CT International Edition 
+  Code System Partitions are distinct, identifiable segments of an overall Code System namespace. While most Code Systems are in essence one partition and, therefore, do not have 
+identifiable partitions, some Code Systems can be made up of a collection of distinct partitions. SNOMED CT is a prototypical example of such a Code System. The SNOMED CT International Edition 
 is the base partition and can be used alone, but there are many distinct additional partitions that can be added to the international core to create what is known as “a SNOMED CT Edition”. 
 Both the international core and an edition will have the same Code System Identifier (OID: 2.16.840.1.113883.6.96), but each unique edition can be distinguished by the partition identifiers 
 used to create the edition. For SNOMED CT it seems likely that the “moduleID” can be used as the partition identifier. It should be noted that partitions can introduce new concepts and any 
-other construct typical for a Code System to the resulting “complete” Code System.  
+other construct typical for a Code System.  
   </p>
   <p>
 Code System Supplements contain information that may (and when useful for Value Set Definitions, do) contain additional attributes and properties that are associated with concepts. 

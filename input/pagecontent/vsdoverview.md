@@ -1,30 +1,28 @@
-This guide is consistent with the previously published Characteristics of a Value Set Definition (VSD) normative specifications. Changes from the previous 
-specification are listed in the <a href="#changes">Changes from Previous Release</a> section below. The purpose of VSD is described in the sections below.
+This implementation guide is consistent with the previously published *Characteristics of a Value Set Definition, Release 1 (VSD)* normative specification. Changes from the previous 
+specification are listed in the <a href="#changes">Changes From Characteristics of a Value Set Definition, Release 1</a> section. 
+
+The content presented in the “Characteristics of a Value Set Definition” subtabs within this IG constitutes *Characteristics of a Value Set Definition, Release 2*. Within those subtabs, references to “this standard” refer specifically to <i>Characteristics of a Value Set Definition, Release 2</i>.
 
 ### Intended Audience
 
 This specification is primarily intended for terminology system designers, individuals responsible for implementing standards that use terminology subsets 
-and subject matter experts tasked with creating or understanding terminology artifacts. It is assumed the readers will be familiar with the Terminology artifacts
+and subject matter experts tasked with creating or understanding terminology artifacts. It is assumed the readers will be familiar with the terminology artifacts
 described in this guide. Some of the overview material will be important for less technically focused individuals to understand as they create terminology content
  for use in implemented systems.  
 
-Those individuals looking for the highlights should focus on the Value Set Definition Specification section as this provides the overall structure of a Value Set. 
-They should also review the details presented in the <a href="cld.html">Content Logical Definition</a> section. To understand how a Value Set Definition is not the same as a Value Set Expansion, see the sections <a href="vsexpansion.html">Value Set Expansion</a> and also <a href="valuesetdefinition.html#relationship-between-the-value-set-definition-and-value-set-expansion-code-set">Relationship Between the Value Set Definition and Value Set Expansion Code Set</a>.  
+Those individuals looking for the highlights should focus on the <a href="valuesetdefinition.html">Value Set Definition Specification</a> section as this provides the overall structure of a Value Set. 
+They should also review the details presented in the <a href="cld.html">Content Logical Definition</a> section. To understand how a Value Set Definition is not the same as a Value Set Expansion, see the sections <a href="vsexpansion.html">Value Set Expansion</a> and also <a href="valuesetdefinition.html#relationship-between-the-value-set-definition-and-value-set-expansion-code-set">Relationship Between the Value Set Definition and Value Set Expansion Code Set</a>.
 
-Those readers particularly interested in understanding the set of functions used to define a Value Set Definition Content Logical Definition should study the work 
-undertaken for an existing standard describing An HL7 Value Set Definition Expression Syntax, published within 
-<a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=437">Characteristics of a Value Set Definition, Release 1</a>. 
-While this is generally useful for Value Set implementers, it is noted that other Value Set Definition Content Logical Definition formal syntaxes are supported 
-(see <a href="cld.html#content-expression">Content Expression</a>).
+Readers interested in understanding the set of functions used to define a Value Set Definition Content Logical Definition should read the <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=437">Characteristics of a Value Set Definition, Release 1</a> section named "An HL7 Value Set Definition Expression Syntax". Other Value Set Definition Content Logical Definition formal syntaxes are supported 
+and are described in the <a href="cld.html#content-expression">Content Expression</a> section.
 
 ### In Scope
 
-This document describes the data elements that formally define and characterize (describe) how to create an HL7 conformant 
-Value Set. All references to “Value Set” and “Code System” in this document, unless specifically noted, are to an HL7 Value Set and Code System defined in this standard. These include:
-* Metadata used to identify and define a Value Set Definition 
+This document describes the data elements that formally define how to create a Value Set that conforms to HL7 specifications. All references to “Value Set” and “Code System” in this document, unless specifically noted, are to an HL7 Value Set and Code System defined in this standard. These include:
+* Metadata used to identify and describe a Value Set Definition 
 * Elements to support Value Set Definition versioning  
 
-The document also includes material describing “best practices” in the use of certain elements of the Value Set Definition, such as best approach 
+The document also includes material describing best practices in the use of certain elements of the Value Set Definition, such as best approach 
 versus allowed use of additional or alternative Concept Representations.
 
 ### Out of Scope
@@ -41,9 +39,8 @@ for such definition has not been consistent within HL7 standards. Many of the re
 HL7 product family artifacts (V2.x, V3, CDA and FHIR standards), but these are not applied or implemented consistently.  
 
 This standard has already explicitly noted that "a Value Set is only persisted as its Value 
-Set Definition, which is a machine-processable set of 1 or more expressions that permit a specific collection of coded concepts at a given point in time to be reliably 
-reproduced." The HL7 Common Terminology Services Standards also describe various mechanisms and functions to produce Value Set Expansions from Value 
-Set Definitions. This standard provides an explicit list of the precise data items needed for the Value Set Definition.
+Set Definition, which is a machine-processable set of one or more expressions that permit a specific collection of coded concepts at a given point in time to be reliably 
+reproduced." The <a href="https://www.omg.org/cgi-bin/doc?formal/15-04-09.pdf">Common Terminology Services – Release 2 (CTS 2)</a> standard also describe various mechanisms and functions to produce Value Set Expansions from Value Set Definitions. This standard provides an explicit list of the precise data items needed for the Value Set Definition.
 
 ### Need for this Standard
 
@@ -56,18 +53,18 @@ to achieve semantic interoperability in both internal and external communication
 * In addition, implementing this Standard for Value Set Definition in applications such as repositories will support organizations in maintaining the meaning of the 
 repository content over time, facilitating data aggregation and data analysis.
 
-### DataTypes Used
+### Data Types Used
 
-The data types used by this specification are based upon FHIR <a href="https://build.fhir.org/datatypes.html#primitive">Primitive Type</a> datatypes. The previous published release of Characteristics
-of a Value Set Definition used DataTypes from R2 and ISO 21090, but FHIR DataTypes were used here for access and visiblity. There may be nuances with DataTypes across the product families, and it is acceptable 
-to use another set of DataTypes. The FHIR DataTypes are intended to act as a guide.
+The data types used by this specification are based upon FHIR <a href="https://build.fhir.org/datatypes.html#primitive">Primitive Type</a> data types. The previous published release of Characteristics
+of a Value Set Definition used data types from R2 and ISO 21090, but FHIR data types were used here for access and visiblity. There may be nuances with data types across the product families, and it is acceptable 
+to use another set of data types. The FHIR data types are intended to act as a guide.
 
-A data type not defined by FHIR but used here is COLL, which is defined as a “Group of elements”. It is a data type composed of the following components described in the subelements. 
+A data type not defined by FHIR but used here is COLL, which is defined as a “Group of elements”. It is a data type composed of the components described in the subelements. 
 This is similar to the <a href="https://build.fhir.org/datatypes.html#primitive">BackboneElement</a> in FHIR.
 
-### Changes from Previous Release
+### Changes From Characteristics of a Value Set Definition, Release 1
 <a name="changes"/>
- In addition to the changes to the DataTypes mentioned in the section above, 
+ In addition to the changes to the data types mentioned in the section above, 
 
 * Loosened constraints on Value Set Identifiers to align with current implementations
 * Changed name of Workflow Status element to Workflow Status Description

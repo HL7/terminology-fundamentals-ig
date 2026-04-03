@@ -3,11 +3,10 @@
   <a name="identifiersystems"> </a>
   <h3>Identifier Systems</h3>
   <p>
-   Identifier systems are composed of non-coded strings (typically numeric or alphanumeric) that have a common purpose and/or context. They are primarily used to uniquely 
-   identify individual entities (patients, organizations, devices, documents, etc.). Each identifier value is unique within the identifier system. Unlike Code System codes, Identifier system values have no inherent meaning without its system context.
+   Identifier systems are composed of strings (typically numeric or alphanumeric) that have a common purpose and/or context. They are primarily used to uniquely 
+   identify individual entities (patients, organizations, devices, documents, etc.). Each identifier value is unique within the identifier system. Identifier system values have no inherent meaning without its system context.
    </p>
-   <p>
-   Patient IDs, lab order numbers, device serial numbers, claim IDs, etc. are all examples of local Identifier Systems. The Global Trade Item Number (GTIN) system, US state driver's license number systems, and 
-   country passport number systems are examples of external Identifier Systems.
+  <p>
+   Patient IDs, lab order numbers, device serial numbers, and claim IDs are examples of local identifier systems, defined and managed within a single organization. Systems such as the Global Trade Item Number (GTIN), US state driver’s license numbers, and country passport numbers are examples of jurisdictional identifier systems, issued by recognized authorities for use across organizations.
   </p>
 </div>
