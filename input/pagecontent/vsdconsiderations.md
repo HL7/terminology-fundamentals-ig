@@ -11,7 +11,7 @@ in a very real way the HL7 V2.x world has continued to struggle to move beyond t
 We now understand that such embedded “Value Set” artifacts are problematic because they live in isolation with little overarching governance. At a minimum there 
 is value in separating the Value Set content from the artifacts using that content to encourage re-use in other appropriate models. This specification describes 
 the metadata that should be used to describe a Value Set that stands alone and as such can be maintained, versioned, vetted and reused. As such, that definition 
-can then be applied to a Code System to produce an instance Value Set Expansion Code Set of member concepts. The now independent Value Set Definition can be 
+can then be applied to a Code System to produce an instance Value Set Expansion Code Set of member Concepts. The now independent Value Set Definition can be 
 repeatedly applied to every new version of the Code System, producing the latest up-to-date Value Set Expansion Code Set for each new Code System version.
 
 ### Implementation Technologies

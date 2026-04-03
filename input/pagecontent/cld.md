@@ -2,7 +2,7 @@ The formal specification in the Value Set Definition of the Code System content 
 called a Content Logical Definition (CLD.) Previous specifications allowed only one formalism (the original grammar called the HL7 Value Set Definition Expression Syntax which can be referenced in 
 <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=437">Characteristics of a Value Set Definition, Release 1</a>) for representing the CLD, however this version 
 allows the CLD to be specified in any usable way. While this increases the possibility of more than one standards-compliant way to represent a CLD, 
-it provides flexibility to support existing formalisms for obtaining concepts/codes from Code Systems. This means that a specific Value Set Definition may use a CLD formalism 
+it provides flexibility to support existing formalisms for obtaining Concept Codes from Code Systems. This means that a specific Value Set Definition may use a CLD formalism 
 that all users may not completely understand, but the intent 
 is to expect designers of such formalisms, such as <a href="https://www.snomed.org/">SNOMED International</a>, to publish descriptions of the formalism used so others may understand 
 and compute the Value Set Expansion Code Sets defined. The HL7 Value Set Definition Expression Syntax serves as an example approach 
@@ -20,7 +20,7 @@ CLD is a content expression that can use only a single syntax.
     <img src="{{site.baseurl}}cld.png"
          alt="Content Logical Definition">
     <figcaption><b>Figure 4</b> A Content Logical Definition is made up of a Content Expression (that can recursively contain other Content Expressions using the same grammar). 
-	The Content Expression can be a syntax or it can be a textual description of the process to be followed to obtain the correct concepts and, as such, is considered “non-computable”.</figcaption>
+	The Content Expression can be a syntax or it can be a textual description of the process to be followed to obtain the correct Concepts and, as such, is considered “non-computable”.</figcaption>
 </figure>  
 <br>
 
@@ -55,7 +55,7 @@ and not directly computable. Th types of expressions noted in the figure are des
 				most recently available version of the Code System as of the LockedDate and the most recent Value Set Definition version as of that date for any Value Set Definitions included by reference. 
 				If no LockedDate is provided, then this version of the Value Set Definition could produce different Value Set Expansion Code Set content with every new Code System version used and Value Set 
 				Definition version referenced.</p>
-                <p>If an author wishes to lock a small subset of concepts needed for the Value Set Definition to a specific Code System version (versus all referenced Value Set Definitions), 
+                <p>If an author wishes to lock a small subset of Concepts needed for the Value Set Definition to a specific Code System version (versus all referenced Value Set Definitions), 
 				the author should not use the LockedDate, and instead use the appropriate function in the CLD grammar chosen and make the “lock” occur 
 				<i>within the CLD clause grammar</i>. The LockedDate is used as the effective date to determine the most recent versions of all referenced Code Systems and 
 				referenced Value Set Definition versions as of that specified date. If a Code System version is defined on the LockedDate, that new version is the “most current version”.</p> 
@@ -71,19 +71,19 @@ and not directly computable. Th types of expressions noted in the figure are des
             </td>
             <td>
                 <p>This attribute flag indicates if “only active” Concept Representations should be included in the resulting Value Set Expansion Code Set when executing the CLD query. An active 
-				Code System Version concept is identified by the “activity status” which is meant to indicate if the concept may be used for data collection and recording at the time the Code 
+				Code System Version Concept is identified by the “activity status” which is meant to indicate if the Concept may be used for data collection and recording at the time the Code 
 				System Version is the currently active Code System.</p>
             </td>
             <td>
-                <p>"FALSE" means that <i>all concepts</i> that match the CLD in the Code System version used to determine the Value Set Expansion Code Set will be returned. "TRUE" means that only <i>active concepts</i>  
+                <p>"FALSE" means that <i>all Concepts</i> that match the CLD in the Code System version used to determine the Value Set Expansion Code Set will be returned. "TRUE" means that only <i>active Concepts</i>  
 				that match the CLD in the Code System version used to determine the Value Set Expansion Code Set will be returned.</p>
-				<p>Any Code System concept attribute that represents activity status should be ignored if ActiveOnly = FALSE. If a Code System has no concept attribute that represents activity status, 
-				then all concepts should be considered to have an activity status = “ACTIVE”. It is assumed that a concept activity status of “RETIRED” or “INACTIVE” represent a status that is 
-				<b>NOT</b> ACTIVE. Note that a concept activity status of “DEPRECATED” is considered to have an activity status = “ACTIVE”. A “DEPRECATED” concept remains available for use, if 
-				needed, but for one or more reasons it is recommended to avoid using that concept (particularly for new development).</p>
-				<p>LockedDate informs the use of a specific code system version 
-				when creating an expansion, therefore any subsequent change in status for codes affected by (scoped by) the LockedDate will be ignored when creating the expansion. This means that 
-				ActiveOnly will not remove codes effected by LockedDate.</p>
+				<p>Any Code System Concept attribute that represents activity status should be ignored if ActiveOnly = FALSE. If a Code System has no Concept attribute that represents activity status, 
+				then all Concepts should be considered to have an activity status = “ACTIVE”. It is assumed that a Concept activity status of “RETIRED” or “INACTIVE” represent a status that is 
+				<b>NOT</b> ACTIVE. Note that a Concept activity status of “DEPRECATED” is considered to have an activity status = “ACTIVE”. A “DEPRECATED” Concept remains available for use, if 
+				needed, but for one or more reasons it is recommended to avoid using that Concept (particularly for new development).</p>
+				<p>LockedDate informs the use of a specific Code System version 
+				when creating an expansion, therefore any subsequent change in status for Concept Codes affected by (scoped by) the LockedDate will be ignored when creating the expansion. This means that 
+				ActiveOnly will not remove Concept Codes effected by LockedDate.</p>
             </td>
 			<td><a href="https://hl7.org/fhir/datatypes.html#boolean">boolean</a></td>
             <td>1..1</td>
@@ -111,9 +111,9 @@ and not directly computable. Th types of expressions noted in the figure are des
                 <p>how to identify a Value Set Expansion Code Set from identified Code Systems that falls within the meaning described in the <a href="valuesetdefinition.html#scope">Scope</a> element.</p>
             </td>
             <td>
-                <p>If this is a non-computable expression, then the text should describe a method (or set of steps) that can be used to identify the concept representations to be included in the value set 
-				expansion. If this is a computable expression, then the text should contain the complete expression needed, rendered using the syntax noted in <a href="#cldsyntaxreference">CLDSyntaxReference.</a> 
-				When evaluated based on an approach appropriate for the defined syntax, this should result in identifying a Value Set Expansion Code Set of Concept Representations (usually codes) from the 
+                <p>If this is a non-computable expression, then the text should describe a method (or set of steps) that can be used to identify the Concept Representations to be included in the Value Set 
+				Expansion. If this is a computable expression, then the text should contain the complete expression needed, rendered using the syntax noted in <a href="#cldsyntaxreference">CLDSyntaxReference.</a> 
+				When evaluated based on an approach appropriate for the defined syntax, this should result in identifying a Value Set Expansion Code Set of Concept Representations (usually Concept Codes) from the 
 				Code Systems identified within the expression.</p>
             </td>
             <td>Given that the entire expression used to determine the Value Set Expansion Code Set will be included in this element, the size should not be significantly restricted.</td>
@@ -125,19 +125,19 @@ and not directly computable. Th types of expressions noted in the figure are des
 
 ### Content Expression
 <a name="contentexpression"/>
-The Content Expression holds the text (potentially combined with the LockedDate) that is used to determine what Concept Representations (codes) should be included in a Value Set Expansion Code Set. 
+The Content Expression holds the text (potentially combined with the LockedDate) that is used to determine what Concept Representations (Concept Codes) should be included in a Value Set Expansion Code Set. 
 There is great value in making this text directly computable, which is supported by the CLDSyntaxReference element that identifies the expression syntax used by the Content Expression text. There are two approaches to 
 the information provided in the Content Expression: those that are computable and therefore are based on the use of a specific evaluable syntax or structure (and therefore should have a CLDSyntaxDescription) and 
-those that are not using a computable syntax or structure, are non-computable and essentially contain textual guidance for how the codes to be included in the Value Set Expansion Code Set are to be identified. The types are discussed further in the sections below.  
+those that are not using a computable syntax or structure, are non-computable and essentially contain textual guidance for how the Concept Codes to be included in the Value Set Expansion Code Set are to be identified. The types are discussed further in the sections below.  
 
 #### Computable Content Expression
 
-A Computable Content Expression is one that uses a syntax to describe the concepts to be included in the Value Set Expansion Code Set. Computable Content Expressions may be syntax-based or structure-based. To support ease of creation, maintenance and use, it is preferred that the Content Expression is directly computable. Computable Content Expressions include those that are syntax-based and structure-based. 
+A Computable Content Expression is one that uses a syntax to describe the Concepts to be included in the Value Set Expansion Code Set. Computable Content Expressions may be syntax-based or structure-based. To support ease of creation, maintenance and use, it is preferred that the Content Expression is directly computable. Computable Content Expressions include those that are syntax-based and structure-based. 
 
 ##### Syntax-based Content Expression
 
 The syntax used to represent the “expression” used to compute the Value Set Expansion Code Set must be clearly specified and allow full use of the Code System (and additional data sources) 
-to determine what codes are wanted. A complete set of syntax functions that may be used to fully specify a Content Expression is described in <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=437">HL7 Specification: Characteristics of a Value Set Definition, Release 1</a> in the HL7 Value Set Definition Expression Syntax Section and is summarized later in this section. 
+to determine what Concept Codes are wanted. A complete set of syntax functions that may be used to fully specify a Content Expression is described in <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=437">HL7 Specification: Characteristics of a Value Set Definition, Release 1</a> in the HL7 Value Set Definition Expression Syntax Section and is summarized later in this section. 
 
 Syntax examples include but are not limited to:
 * <a href="https://confluence.ihtsdotools.org/display/DOCECL">SNOMED CT Expression Constraint Language (ECL)</a>
@@ -152,11 +152,11 @@ This sections intends to summarize the types of functions covered by the HL7 Val
 The HL7 Value Set Definition Expression Syntax is comprised of two main components; the Content Defining Element Types and the Source Code System Specification. 
 
 The Content Defining Element Types describe what kinds of content can be included in a Value Set Expansion Code Set. They act as building blocks of the expression and use the elements described below:
-1.	CodeSystemElement - uses Concept Representations (codes) directly from a source Code System; the types are described below:
+1.	CodeSystemElement - uses Concept Representations (Concept Codes) directly from a source Code System; the types are described below:
     * CodeBasedContent – includes specific Concept Representations and/or their descendants.
-    * PropertyBasedContent – includes Concept Representations based on properties held (or not held) by concepts.
-    * RelationshipBasedContent – includes Concept Representations based on relationships held (or not held) by concepts (e.g., “finding site = lung”).
-    * CodeFilterContent – includes Concept Representations based on operations performed on the string value of codes (e.g., codes starting with "A5").
+    * PropertyBasedContent – includes Concept Representations based on properties held (or not held) by Concepts.
+    * RelationshipBasedContent – includes Concept Representations based on relationships held (or not held) by Concepts (e.g., “finding site = lung”).
+    * CodeFilterContent – includes Concept Representations based on operations performed on the string value of Concept Codes (e.g., Concept Codes starting with "A5").
 2.	ValueSetReference – includes Concept Representations defined by another Value Set Definition.
 3.	CombinedContent – applies set operations (union, intersection, exclusion) to combine multiple Content Expressions.
 
@@ -165,10 +165,10 @@ The Source Code System Specification defines where the Concept Representations c
 *	CodeSystemConstraintParameters – declares a set of constraints on the DrawnFromCodeSystem or on the Concept Representations in that Code System (e.g., include short vs. long name).
 *	AllowedQualifiers – specifies constraints on which qualifiers may be used with a Concept Representation when post-coordinated expressions are created (e.g., only include "finding site" and its value).
 
-In summary, Content Defining Elements describe what codes to include/exclude while the Source Code System Specification anchors those expressions to a precise code system and version, ensuring that the included codes are drawn consistently and reproducibly. Together, they allow a Value Set Definition combine logic (which codes, relationships, properties) with provenance (which system/version), producing a computable, reliable Value Set Expansion Code Set.
+In summary, Content Defining Elements describe what Concept Codes to include/exclude while the Source Code System Specification anchors those expressions to a precise Code System and version, ensuring that the included Concept Codes are drawn consistently and reproducibly. Together, they allow a Value Set Definition combine logic (which Concept Codes, relationships, properties) with provenance (which system/version), producing a computable, reliable Value Set Expansion Code Set.
 
 ##### Structure-based Content Expression
-Computable Content Expressions may also be structure-based. An example of this is the FHIR valueSet.compose element and its sub-elements. The structure of the <a href="https://hl7.org/fhir/valueset-definitions.html#ValueSet.compose">ValueSet.compose</a> decribes which concepts are included or excluded from the Value Set Expansion Code Set. ValueSet.compose implements a syntax-based Content Expression and does so as a structured model rather than a text-based syntax.
+Computable Content Expressions may also be structure-based. An example of this is the FHIR valueSet.compose element and its sub-elements. The structure of the <a href="https://hl7.org/fhir/valueset-definitions.html#ValueSet.compose">ValueSet.compose</a> decribes which Concepts are included or excluded from the Value Set Expansion Code Set. ValueSet.compose implements a syntax-based Content Expression and does so as a structured model rather than a text-based syntax.
 
 To illustrate the differences between a syntax-based and structure-based computable expression, the following example of including all descendants of a SNOMED CT concept is provided in both formats below. 
 
@@ -197,7 +197,7 @@ FHIR ValueSet.compose:
 
 #### Non-computable Content Expression
 
-Some descriptions of Code System content cannot be captured in a computable syntax. This can occur for a variety of reasons, such as when the needed concept codes are not identified using computable parameters 
+Some descriptions of Code System content cannot be captured in a computable syntax. This can occur for a variety of reasons, such as when the needed Concept Codes are not identified using computable parameters 
 or when an initial version of the CLD is crafted as a general textual statement using “pseudo-code”. 
 In this case the CLD can be defined using text to capture the CLD intent. As noted before, if a CLD uses this approach, it cannot be combined with a computable syntax CLD, i.e., that version of the 
 Value Set Definition will not support a directly-computable Value Set Expansion Code Set. Of course, a different version of the Value Set Definition could specify a CLD that uses a computable syntax.

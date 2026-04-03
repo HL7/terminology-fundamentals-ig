@@ -7,7 +7,7 @@ and many of the elements described in the next sections are specifically include
 
 #### General Overview
 
-When most people think of a Value Set, they think of a list of codes or phrases. These lists may be called member list, code list, etc. While a critical part of the usefulness of a 
+When most people think of a Value Set, they think of a list of Concept Codes or phrases. These lists may be called member list, code list, etc. While a critical part of the usefulness of a 
 Value Set, the final set of Code System members used by implementers, which is called the Value Set Expansion in this specification, is only one part of the collective information 
 that _is a Value Set_.  
 
@@ -24,45 +24,45 @@ Each of the elements of the model is described in the sections below.
 
 The phrase "Value Set" usually is taken to mean both of the following:
 
-*   **Value Set Definition**, a description of the set of Concept Representations (usually codes) that are intended for use, **plus** the
-*   **Value Set Expansion Code Set**, the set of resulting codes actually obtained for a particular use, drawn from one or more specific Code System versions.
+*   **Value Set Definition**, a description of the set of Concept Representations (usually Concept Codes) that are intended for use, **plus** the
+*   **Value Set Expansion Code Set**, the set of resulting Concept Codes actually obtained for a particular use, drawn from one or more specific Code System versions.
 
 Yet as is shown in this specification, these are not exactly the same thing. In general, when the phrase “Value Set” is used (including within this specification), 
 the intent is to reference both the Value Set Definition and the Value Set Expansion Code Set as one, in that the distinction is immaterial for the point being made. From this point 
 forward in this document one of the more specific phrases is used when one or the other item is under discussion in particular and the difference is important to note.  
 
 A Value Set Definition is a set of metadata that describes the scope of the intended member Concept Representations, provenance of the included information and, most importantly, a set 
-of instructions that describe (preferably in a computable manner) which Code System Concept Representation, which is almost always a code, should be in the Value Set Expansion Code Set. 
+of instructions that describe (preferably in a computable manner) which Code System Concept Representation, which is almost always a Concept Code, should be in the Value Set Expansion Code Set. 
 As such, the Value Set Definition is then applied to one or more Code System instances to determine the Value Set Expansion Code Set Member Concept Representations. In essence the Value 
-Set Definition (specifically the <a href="cld.html">Content Logical Definition</a>) is a set of functions against the Code System to retrieve the concepts as described in the definition. This 
+Set Definition (specifically the <a href="cld.html">Content Logical Definition</a>) is a set of functions against the Code System to retrieve the Concepts as described in the definition. This 
 is true for every Value Set Definition. It is not restricted to only definitions that use a logical or “intensional” definition; it is also true for simple explicit lists of individually 
-selected concepts (“extensional.”) As long as the Value Set Definition is not locked to a single Code System version, even simple code lists can result in changing Value Set Expansion Code 
-Sets if the codes in the original definition are retired in later Code System versions. In summary, only a Value Set Expansion Code Set (see Figure 1 below and also the <a href="vsexpansion.html">Value Set Expansion</a> page) will contain 
+selected Concepts (“extensional.”) As long as the Value Set Definition is not locked to a single Code System version, even simple Concept Code lists can result in changing Value Set Expansion Code 
+Sets if the Concept Codes in the original definition are retired in later Code System versions. In summary, only a Value Set Expansion Code Set (see Figure 1 below and also the <a href="vsexpansion.html">Value Set Expansion</a> page) will contain 
 the accurate Expansion Code Set Member Concept Representations that are the result of the proper Value Set Definition version applied against the proper Code System version.
 
 #### Alignment with Intensional and Extensional
 
-There are two approaches to defining Value Sets (think of these as “types” of a value set definition), Intensional and Extensional, repeated in part here for clarity:
+There are two approaches to defining Value Sets (think of these as “types” of a Value Set Definition), Intensional and Extensional, repeated in part here for clarity:
 
-*   _Extensional Definition_: Explicitly enumerating each of the Value Set concepts.
+*   _Extensional Definition_: Explicitly enumerating each of the Value Set Concepts.
 *	_Intensional Definition_: Defining an algorithm that, when executed by a machine (or interpreted by a human being), yields the desired set of elements.
 
 Both approaches are used frequently in defining Value Sets but intensional definitions may use text that is not directly computable and therefore requires human interpretation to 
-determine a reliable set of concepts that make up the actual Value Set Expansion Code Set.
+determine a reliable set of Concepts that make up the actual Value Set Expansion Code Set.
 
 The <a href="cld.html">Content Logical Definition</a> page of this document describes how to represent a computable description of the Concept Representations that are intended to be in the Value Set 
-Expansion Code Set. It is through the use of functions included in the Content Logical Definition that any and all concepts included in a Value Set Expansion Code Set will be identified. 
+Expansion Code Set. It is through the use of functions included in the Content Logical Definition that any and all Concepts included in a Value Set Expansion Code Set will be identified. 
 The difference between Intensional and Extensional is a description of the style used to determine the Value Set Expansion Code Set.  
 
-In an Extensional style Value Set if the Value Set Expansion is allowed to change with new Code System versions (i.e., is not LOCKED to a single Code System version), then new concepts 
-will not automatically be added to the Value Set Expansion Code Set because each concept is explicitly identified, but concepts may fall out of the Value Set Expansion Code Set if they 
+In an Extensional style Value Set if the Value Set Expansion is allowed to change with new Code System versions (i.e., is not LOCKED to a single Code System version), then new Concepts 
+will not automatically be added to the Value Set Expansion Code Set because each Concept is explicitly identified, but Concepts may fall out of the Value Set Expansion Code Set if they 
 are retired. In an Intensional style Value Set the Content Logical Definition contains a logical expression that is to be evaluated against each allowed Code System version and that 
-evaluation can result in both the addition and removal of concepts from the Value Set Expansion Code Set.
+evaluation can result in both the addition and removal of Concepts from the Value Set Expansion Code Set.
 
 <figure>
     <img src="{{site.baseurl}}vstypes.png"
          alt="Value Set Definition Types and Expansions">
-    <figcaption><b>Figure 1</b> Value Set Definition types and resulting Expansions illustrates how a value set expansion may change over time whether its value set definition is written intensionally or extensionally.</figcaption>
+    <figcaption><b>Figure 1</b> Value Set Definition types and resulting Expansions illustrates how a Value Set Expansion may change over time whether its Value Set Definition is written intensionally or extensionally.</figcaption>
 </figure>
 
 #### Class Model Diagram
@@ -105,8 +105,8 @@ Value Set Definition. This collection of elements is made up of an identifier an
     <tbody>
         <tr>
             <td>Value Set Identifier</td>
-            <td>globally unique string identifying this value set</td>
-            <td>The string must be globally unique, is expected to be a permanent canonical identifier for all versions and associated instances, and is used to reference the value set
+            <td>globally unique string identifying this Value Set</td>
+            <td>The string must be globally unique, is expected to be a permanent canonical identifier for all versions and associated instances, and is used to reference the Value Set
 			in a specification, model, design or an instance.</td>
             <td>Current implementations at HL7 use <a href="https://www.hl7.org/fhir/datatypes.html#uri">URIs</a> or <a href="https://www.hl7.org/fhir/datatypes.html#oid">OIDs</a> (a subtype of URI). 
 			Identifiers can have attributes, such as "preferred" or "authoritative".</td>
@@ -121,7 +121,7 @@ Value Set Definition. This collection of elements is made up of an identifier an
     <tbody>
         <tr>
             <td><a name="scope"/>Scope</td>
-            <td>textual description of the span of meanings for concepts to be included within the Value Set Expansion Code Set including the intended use and limitations of the Value Set.</td>
+            <td>textual description of the span of meanings for Concepts to be included within the Value Set Expansion Code Set including the intended use and limitations of the Value Set.</td>
             <td>This is intended to convey between humans (and not necessarily in a computable fashion) the scope of Concept Representation meanings and capture important elements of the context 
 			of use for the Value Set. The scope should describe “the semantic space” the Value Set Expansion is intended to cover. This can also describe the approach taken to build the Value Set
 			Expansion Code Set. Any substantive change is one that changes the meaning of the scope and therefore implies a different Value Set Definition rather than a new Value Set Definition Version.
@@ -130,8 +130,8 @@ Value Set Definition. This collection of elements is made up of an identifier an
 			<ul>
 				<li>Focus: The general focus of the Value Set as it relates to the intended semantic space. This can be the information about clinical relevancy or the statement about the general focus of the Value Set, such as a description of types of messages, payment options, geographic locations, etc.</li>
 				<li>Model Context: A statement that describes how this Value Set is to be used in an artifact.</li>
-				<li>Inclusion Criteria: Criteria describing what concepts or codes should be included and why.</li>
-				<li>Exclusion Criteria: Criteria describing what concepts or codes should be excluded and why.</li>
+				<li>Inclusion Criteria: Criteria describing what Concepts or Concept Codes should be included and why.</li>
+				<li>Exclusion Criteria: Criteria describing what Concepts or Concept Codes should be excluded and why.</li>
 			</ul>
 			As noted above, the scope text is intended to be non-computable, therefore 
 			determining a substantive change is solely the responsibility of the Value Set steward/author/reviewer community. The expectation is that the original intent of the Value Set 
@@ -232,7 +232,7 @@ Value Set Definition. This collection of elements is made up of an identifier an
 			a basis of the current Value Set Definition.</td>
             <td>This may refer to other Value Set Definitions, research articles, or other resources. This is not intended to document uses of the Value Set Definition, 
 			for this, see the <a href="#use">Use</a>element below. For example, the identifier for a Value Set Definition that was cloned to begin the work on this 
-			Value Set Definition, or a pointer to a published article that describes appropriate concepts. There may be multiple source references.</td>
+			Value Set Definition, or a pointer to a published article that describes appropriate Concepts. There may be multiple source references.</td>
             <td><a href="https://www.hl7.org/fhir/datatypes.html#string">string</a></td>
             <td>0..*</td>
         </tr>
@@ -240,7 +240,7 @@ Value Set Definition. This collection of elements is made up of an identifier an
             <td>Keyword</td>
             <td>a word or phrase that captures a key aspect of a Value Set Definition</td>
             <td>
-                <p>Word or words that may be used in an information retrieval system to index the contents of the Value Set Definition. The string datatype allows implementers to use strings or coded concepts.</p>
+                <p>Word or words that may be used in an information retrieval system to index the contents of the Value Set Definition. The string datatype allows implementers to use strings or coded Concepts.</p>
             </td>
             <td>
                 <p>This may be used to surface indexing terms for a search.</p>
@@ -253,8 +253,8 @@ Value Set Definition. This collection of elements is made up of an identifier an
             <td>the manner in which the Value Set Definition will be employed or applied.</td>
             <td>an optional repeating element used to capture information about consumers of the Value Set Definition and the implementations, projects or standards where the author has utilized the Value Set.</td>
             <td>
-                <p>The information captured in “Use” can and should include names of programs and/or names of organizational entities that use the value set definitions, including standards that 
-				require the value set definition. This is likely to be a “point in time” view and should not be considered an authoritative listing of all uses of the Value Set. In the USA, the Value Set Expansions created for electronic quality measures 
+                <p>The information captured in “Use” can and should include names of programs and/or names of organizational entities that use the Value Set Definitions, including standards that 
+				require the Value Set Definition. This is likely to be a “point in time” view and should not be considered an authoritative listing of all uses of the Value Set. In the USA, the Value Set Expansions created for electronic quality measures 
 				(eCQMs) that are a part of the Meaningful Use requirements could implement this as follows:</p>
                 <ul>
 					<li>User: Measure Steward name; Usage: Measure Identifier & version/Name</li>
@@ -294,7 +294,7 @@ to a particular version of a Value Set Definition.
 <table class="grid">
     <tr style="font-weight: bold; background-color: #eeeeee"><td colspan="6">Value Set Definition Version — Definitional Elements<br><br>If either of the elements within this section changes in any way, then a new Value 
 	Set Definition Version must be created with a new Value Set Version Identifier assigned but the Value Set Identifier does not change.<br><br>Note: If a content logical definition content expression contains Concept 
-	Representations that can change yet are still considered a representation of the same concept, then the value set version may change due to a Code System Version change alone.</td></tr>
+	Representations that can change yet are still considered a representation of the same Concept, then the Value Set version may change due to a Code System Version change alone.</td></tr>
 	<tr style="font-weight: bold;"> <th>Element</th> <th>Definition</th> <th>Description</th> <th>Usage Notes</th> <th>Data Type</th> <th>Cardinality</th></tr>
     <tbody>
         <tr>
@@ -302,7 +302,7 @@ to a particular version of a Value Set Definition.
                 <p>Content Logical Definition</p>
             </td>
             <td>
-                <p>formal representation used to determine the coded concept contents to be included in the Value Set Expansion Code Set</p>
+                <p>formal representation used to determine the coded Concept contents to be included in the Value Set Expansion Code Set</p>
             </td>
             <td>
                 <p>The Content Logical Definition (CLD) is a formal representation of Value Set content and is intended to be machine processable. It is used to generate the coded 
@@ -441,7 +441,7 @@ to a particular version of a Value Set Definition.
             <td>unrestricted field of remarks or other text.</td>
             <td>Each comment is an entry of arbitrary length that is only editable by those in the author group.</td>
             <td>This element is expected to primarily used by authors of Value Sets in the development and maintenance process. One important use prior to fully defining the Value Set Content 
-			Logical Definition, is to include a set of easily understood example concepts that are consistent with concepts expected to be found in the Value Set Expansion Code Set. This 
+			Logical Definition, is to include a set of easily understood example Concepts that are consistent with Concepts expected to be found in the Value Set Expansion Code Set. This 
 			use replaces a defined Example Content element included in a prior version of this specification. Changes to this element should never result in a new Value Set Definition Version.</td>
             <td><a href="https://www.hl7.org/fhir/datatypes.html#string">string</a></td>
             <td>1..1</td>
@@ -473,9 +473,9 @@ to a particular version of a Value Set Definition.
             <td>
                 <p>The following descriptive words have traditionally been used to describe the CLD in HL7 standards. Other phrases may be of use for some users.</p>
                 <ul>
-					<li>Extensional: the CLD is a simple list of individually specified concepts that uses no relationships or other attributes to determine the Value Set Expansion Code Set.</li>
+					<li>Extensional: the CLD is a simple list of individually specified Concepts that uses no relationships or other attributes to determine the Value Set Expansion Code Set.</li>
 					<li>Grouping: the CLD is restricted to a UNION of one or more other Value Set Definition references.</li>
-					<li>Intensional: the CLD is an algorithm that, when executed by a machine (or interpreted by a human being), yields a set of concepts.</li>
+					<li>Intensional: the CLD is an algorithm that, when executed by a machine (or interpreted by a human being), yields a set of Concepts.</li>
 				</ul>
             </td>
             <td><a href="https://www.hl7.org/fhir/datatypes.html#string">string</a></td>
@@ -497,8 +497,8 @@ to a particular version of a Value Set Definition.
             </td>
             <td>
                 <p>This list of Code System Identifiers should be derived from the Content Logical Definition to ensure that it is accurate. When the Content Logical Definition does not 
-				specify any content types based on Code Systems, this is not populated. It is possible that a Code System will be in the CLD <i>but not generate a concept in the Value Set
-				Expansion Code Set </i>if codes specified in the CLD are inactive or if an expression does not identify any codes; therefore, this may list Code Systems that are not 
+				specify any content types based on Code Systems, this is not populated. It is possible that a Code System will be in the CLD <i>but not generate a Concept in the Value Set
+				Expansion Code Set </i>if Concept Codes specified in the CLD are inactive or if an expression does not identify any Concept Codes; therefore, this may list Code Systems that are not 
 				resident in a specific Value Set Expansion Code Set.</p>
             </td>
             <td><a href="https://www.hl7.org/fhir/datatypes.html#uri">uri</a>

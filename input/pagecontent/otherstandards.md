@@ -10,7 +10,7 @@ A detailed description of Value Sets (HL7 and other) and their relationships to 
 in <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=481">Core Principles and Properties of HL7 Version 3 Models</a>, much of which is described 
 in a product-agnostic approach in this IG.  
 
-In HL7 V3, a Value Set (a collection of concepts drawn from one or more Code Systems grouped together for a specific purpose) is one of the key defined 
+In HL7 V3, a Value Set (a collection of Concepts drawn from one or more Code Systems grouped together for a specific purpose) is one of the key defined 
 vocabulary structures, typically associated with a coded Model Element (in a message or document) through a vocabulary binding from its associated Concept 
 Domain (for Context binding) or directly from the Model Element (for Model binding). In addition to the descriptions in the <a href="valuesetdefinition.html">Value Set Definition Specification</a> 
 section of this document, the V3 vocabulary structures and their usage is described in further detail in the <a href="valuesets.html">Value Sets</a> section. 
@@ -19,7 +19,7 @@ The <a href="conformance.html">Terminology Conformance</a> section discusses Voc
 
 The V3 HL7 Vocabulary included a large number of (> 1800) HL7-defined Value Sets – the detailed contents and descriptions are found in the HL7 V3 Normative Edition
 and now published as FHIR Value Sets in the <a href="https://terminology.hl7.org/">HL7 Terminology (THO)</a>. The “source of truth” for the V3 HL7 Vocabulary 
-(including the value sets) was previously the MIF (viewable using the RoseTree tool). In addition to the V3 HL7 Value Sets, there 
+(including the Value Sets) was previously the MIF (viewable using the RoseTree tool). In addition to the V3 HL7 Value Sets, there 
 are many other Value Sets defined by organizations outside of HL7 (and within different product families) that are not represented or referenced directly in the MIF or Normative Edition, but still may 
 be used in HL7 messages and documents. The same HL7 vocabulary binding machinery is also used for specifying these “non-HL7” Value Sets in message and document instances.  
 
@@ -43,18 +43,18 @@ HL7 Version 2 (V2) manages terminology through Tables, which are bound to specif
 
 #### Current Table-Based Model (V2.x)
 
-In current versions of the standard (up to v2.9.1), terminology is published as tables within the standard's narrative. These tables serve as the normative source of truth for conformance. V2 historically conflates the concepts of Code System and Value Set, as tables serve dual roles without a clean separation between the two. Additionally, some tables—particularly User-Defined tables—do not represent implementable terminology at all and instead function as concept domains.
+In current versions of the standard (up to v2.9.1), terminology is published as tables within the standard's narrative. These tables serve as the normative source of truth for conformance. V2 historically conflates the Concepts of Code System and Value Set, as tables serve dual roles without a clean separation between the two. Additionally, some tables—particularly User-Defined tables—do not represent implementable terminology at all and instead function as Concept Domains.
 
 The standard defines several table types based on content ownership and maintenance, which align with the VSD concepts of Stewardship and Scope:
 
 * HL7-Defined: Values are published by HL7 and are universally applicable. While the values themselves may not be redefined, the tables are often extensible to allow for local additions.
-* User-Defined: Values are locally or site-defined to accommodate institutional variations (e.g., patient locations). HL7 may provide suggested values as a starter set, but the governance of the final expansion rests with the implementer. Some User-Defined tables function as concept domains, containing either no codes or only illustrative examples that are not intended for direct implementation.
+* User-Defined: Values are locally or site-defined to accommodate institutional variations (e.g., patient locations). HL7 may provide suggested values as a starter set, but the governance of the final expansion rests with the implementer. Some User-Defined tables function as Concept Domains, containing either no Concept Codes or only illustrative examples that are not intended for direct implementation.
 * HL7-External (HL7-EXT): Content is maintained by HL7 but hosted outside the V2 maintenance space (e.g., in V3 or FHIR repositories).
 * External, Referenced, and Imported: These tables represent content from external standards organizations (e.g., ISO, LOINC, UCUM).
 
 Most V2 tables are extensional (explicit lists). Intensional logic is found in Referenced or External tables, where the definition is a pointer to an external authority (e.g., "All valid codes from ISO 3166") rather than a static list within the V2 publication.
 
-Terminology constraints are enforced via data types. CNE (Coded with No Exceptions) implies a Required binding to a specific value set, while CWE (Coded with Exceptions) allows for local extensions or text, aligning with Extensible binding principles. When V2 profiles or implementation guides constrain table values for specific use cases, the resulting artifacts more closely resemble formal Value Sets as defined by this Implementation Guide.
+Terminology constraints are enforced via data types. CNE (Coded with No Exceptions) implies a Required binding to a specific Value Set, while CWE (Coded with Exceptions) allows for local extensions or text, aligning with Extensible binding principles. When V2 profiles or implementation guides constrain table values for specific use cases, the resulting artifacts more closely resemble formal Value Sets as defined by this Implementation Guide.
 
 #### V2+: The Evolution to Computable Terminology
 
@@ -83,7 +83,7 @@ Clinical Document Architecture Release 2 (CDA R2) is one of the HL7 V3 family st
 which does not include explicit references to Value Sets and versions in the CD (Concept Descriptor) or other coded data types. In particular for implementation guides 
 where references to Value Sets are required, such as QRDA (<a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=35">HL7 Implementation Guide for 
 CDA® Release 2: Quality Reporting Document Architecture – Category I</a>), it may be necessary to use a CDA extension in order to represent this data – for QRDA, 
-this extension is the sdtc:valueSet attribute (note that there is no extension currently being used in QRDA to represent the value set version).  
+this extension is the sdtc:valueSet attribute (note that there is no extension currently being used in QRDA to represent the Value Set version).  
 
 The CDA R2 base Standard includes the specification of a large number of Value Sets that are defined in tables contained within the CDA R2 Standard document itself (<a href="http://www.hl7.org/implement/standards/product_brief.cfm?product_id=7">HL7 Clinical Document Architecture, Release 2.028</a>). The majority of these Value Sets 
 are enumerations (extensional definitions), but some are defined by rather simple intensional rules – an example is “Table 31: Value set for RelatedEntity.classCode (CNE)”, 

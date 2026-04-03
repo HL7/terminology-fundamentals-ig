@@ -28,7 +28,7 @@ versus allowed use of additional or alternative Concept Representations.
 ### Out of Scope
 
 The following items have been declared explicitly out of scope for this Standard:
-* Implications of the use of this Standard in evaluation of post-coordination concepts, even though support for inclusion of expressions is tacitly possible given 
+* Implications of the use of this Standard in evaluation of post-coordinated concepts, even though support for inclusion of expressions is tacitly possible given 
 the functionality described in the Content Logical Definition section, and the fact that such post-coordinated expressions can be communicated in a string.
 * This Standard does not describe an exchange model or syntax. 
 

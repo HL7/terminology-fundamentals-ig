@@ -7,7 +7,7 @@ Terminology Fundamentals includes information from the <a href="https://www.hl7.
 the material has been generalized for use by all HL7 implementers. However, the spirit of the original specification remains and provides the basis for this guide. 
 
 Terminology Fundamentals also integrates information from <a href="https://www.hl7.org/implement/standards/product_brief.cfm?product_id=437">HL7 Specification: Characteristics of a Value Set Definition, Release 1</a>. This standard is active (reaffirmed in 2023) and describes how to create an 
-HL7 conformant value set. "Characteristics of a Value Set Definition, Release 1" refers to "Core Principles and Properties of HL7 Version 3 Models, Release 2" as a prerequisite and references the 
+HL7 conformant Value Set. "Characteristics of a Value Set Definition, Release 1" refers to "Core Principles and Properties of HL7 Version 3 Models, Release 2" as a prerequisite and references the 
 definitions and ideas described by Core Principles. This made the two standards ideal candidates to be merged into one product family agnostic informative IG to provide terminology fundamental knowledge 
 to the HL7 community.
 

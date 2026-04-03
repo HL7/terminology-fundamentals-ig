@@ -15,7 +15,7 @@ to learn more about terminology across HL7, but it is not intended to provide im
   </p>
   <p>
     In HL7, the possible values for data elements and the associated meanings of those values are defined in Code Systems, from which both the Concept Representation and any 
-	associated meanings are drawn. The set of codes that are allowed for a particular coded model element is referred to as a Value Set.
+	associated meanings are drawn. The set of Concept Codes that are allowed for a particular coded model element is referred to as a Value Set.
   </p>
   <p>
     The pages included under the Terminology Artifacts tab describe the structural properties of terminology artifacts, such as Concepts, Code Systems, Value Sets, and more. 

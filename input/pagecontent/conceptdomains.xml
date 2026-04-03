@@ -3,8 +3,8 @@
   <a name="conceptdomains"> </a>
   <h3>Concept Domains</h3>
   <p>
-   An HL7 Concept Domain is a named category of concepts (a semantic type). Concept Domains exist to constrain the intent of the coded element while deferring the binding 
-   of the element to a value set until later in the specification development or implementation process. Concept Domains can be hierarchical in nature, and each 
+   An HL7 Concept Domain is a named category of Concepts (a semantic type). Concept Domains exist to constrain the intent of the coded element while deferring the binding 
+   of the element to a Value Set until later in the specification development or implementation process. Concept Domains can be hierarchical in nature, and each 
    hierarchy represents a more specific categorization from a broader to a narrower semantic category. 
   </p>
   <p>
@@ -14,24 +14,24 @@
   </p>
   <p>
     Concept Domains are universal in nature, so the name for a Concept Domain should never contain any reference to a specific implementation context. Concept Domains are also
-	present to permit binding to more than one specific code system (in general), so the names also should not contain a reference to a specific code system. 
+	present to permit binding to more than one specific Code System (in general), so the names also should not contain a reference to a specific code system. 
   </p>
   <p>
-    A Concept Domain should be documented by specifying a name and a narrative definition. It is strongly recommended that at least three concept examples that represent possible
-	values for an attribute or data type property are provided to illustrate the semantic space. The examples should represent concepts that characterize the intent and purpose
+    A Concept Domain should be documented by specifying a name and a narrative definition. It is strongly recommended that at least three Concept examples that represent possible
+	values for an attribute or data type property are provided to illustrate the semantic space. The examples should represent Concepts that characterize the intent and purpose
 	of the Concept Domain. This can be accomplished in one of the following ways:
   </p>
   <ul>
-    <li>Including example concepts as part of the narrative definition</li>
-	<li>Binding the Concept Domain to a Value Set that provides appropriate example concepts</li>
+    <li>Including example Concepts as part of the narrative definition</li>
+	<li>Binding the Concept Domain to a Value Set that provides appropriate example Concepts</li>
   </ul>
   
   <a name="cd-examples"> </a>
   <h4 id="cd-examples">Examples of Concept Domains</h4>
   <p>
-    The Concept Domain named 'HumanLanguage' carries the description, "Codes for the representation of the names of human languages". The set of concept identifiers that represent
+    The Concept Domain named 'HumanLanguage' carries the description, "Codes for the representation of the names of human languages". The set of Concept Identifiers that represent
 	different human languages can be drawn from different Code Systems, depending on the implementation context. For example, a United States Implementation Guide may choose to use 
-	a Value Set that includes concept identifiers for various Native American languages, while a New Zealand Implementation Guide may find such a Value Set inappropriate.
+	a Value Set that includes Concept Identifiers for various Native American languages, while a New Zealand Implementation Guide may find such a Value Set inappropriate.
   </p>
   
   <a name="sub-domains"> </a>
@@ -39,6 +39,6 @@
   <p>
     One Concept Domain may be defined to be "sub-domain" of another. This means that the intended meaning and reference of the sub-domain is intended to be narrower than the meaning 
 	of the parent. For example, there is a Concept Domain ObservationMethod, with a sub-domain of GeneticObservationMethod. Its primary 
-	purpose is to indicate that all of the concepts in a Value Set that is associated with the sub-domain should also be concepts for the parent domain, though the reverse may not be true.
+	purpose is to indicate that all of the Concepts in a Value Set that is associated with the sub-domain should also be Concepts for the parent domain, though the reverse may not be true.
   </p>
 </div>
